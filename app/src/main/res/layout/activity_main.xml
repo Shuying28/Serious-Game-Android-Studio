@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40sp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/quizapp"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/display_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginBottom="10sp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="start"
+        android:text="@string/loading_name"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/daily_quiz_button"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_margin="6sp"
+        android:background="@drawable/main_button"
+        android:text="@string/daily_quiz"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/practice_quiz_generate_button"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_margin="6sp"
+        android:background="@drawable/main_button"
+        android:text="@string/practice"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/leaderboard_button"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_margin="6sp"
+        android:background="@drawable/main_button"
+        android:text="@string/leaderboard"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/change_name_button"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_margin="6sp"
+        android:background="@drawable/main_button"
+        android:text="@string/change_name"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/logout_button"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6sp"
+        android:layout_marginBottom="50sp"
+        android:background="@drawable/main_button"
+        android:text="@string/logout_text"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+</LinearLayout>
