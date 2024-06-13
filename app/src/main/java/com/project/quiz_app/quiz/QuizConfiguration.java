@@ -13,7 +13,7 @@ public class QuizConfiguration implements Serializable {
         this.numberOfQuestions = numberOfQuestions;
     }
 
-    QuizConfiguration() {
+    public QuizConfiguration() {
     }
 
     public String getDifficulty() {

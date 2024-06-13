@@ -3,25 +3,25 @@ package com.project.quiz_app;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.project.quiz_app.quiz.DailyQuiz;
+import com.project.quiz_app.quiz.QuizConfiguration;
 import com.project.quiz_app.quiz.QuizMenu;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    FirebaseAuth auth;
     TextView displayName, title;
-    Button logoutButton, practiceQuizButton, dailyQuizButton, leaderboardButton, changeNameButton;
-    FirebaseUser user;
+    Button practiceQuizButton, mathematicsButton, scienceButton, historyButton;;
     DialogObject dialogObject = new DialogObject(MainActivity.this);
 
     @Override
@@ -29,20 +29,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dailyQuizButton = findViewById(R.id.daily_quiz_button);
+        mathematicsButton = findViewById(R.id.mathematics_button);
+        scienceButton = findViewById(R.id.science_button);
+        historyButton = findViewById(R.id.history_button);
         practiceQuizButton = findViewById(R.id.practice_quiz_generate_button);
-//        leaderboardButton = findViewById(R.id.leaderboard_button);
-//        changeNameButton = findViewById(R.id.change_name_button);
-//        logoutButton = findViewById(R.id.logout_button);
         displayName = findViewById(R.id.display_name);
         title = findViewById(R.id.title);
 
         if(!isInternetConnection()) {
-            dailyQuizButton.setVisibility(View.GONE);
+            mathematicsButton.setVisibility(View.GONE);
             practiceQuizButton.setVisibility(View.GONE);
-//            leaderboardButton.setVisibility(View.GONE);
-//            changeNameButton.setVisibility(View.GONE);
-//            logoutButton.setVisibility(View.GONE);
             displayName.setVisibility(View.GONE);
             title.setVisibility(View.GONE);
 
@@ -51,36 +47,16 @@ public class MainActivity extends AppCompatActivity {
 
         displayName.setText("Hello, Guest");
 
-        dailyQuizButton.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), DailyQuiz.class);
-            startActivity(intent);
-            finish();
-        });
+        mathematicsButton.setOnClickListener(this);
+        scienceButton.setOnClickListener(this);
+        historyButton.setOnClickListener(this);
+
 
         practiceQuizButton.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), QuizMenu.class);
             startActivity(intent);
             finish();
         });
-
-//        leaderboardButton.setOnClickListener(v -> {
-//            Intent intent = new Intent(getApplicationContext(), Leaderboard.class);
-//            startActivity(intent);
-//            finish();
-//        });
-//
-//        changeNameButton.setOnClickListener(v -> {
-//            Intent intent = new Intent(getApplicationContext(), SetOrChangeName.class);
-//            startActivity(intent);
-//            finish();
-//        });
-//
-//        logoutButton.setOnClickListener(v -> {
-//            FirebaseAuth.getInstance().signOut();
-//            Intent intent = new Intent(getApplicationContext(), Login.class);
-//            startActivity(intent);
-//            finish();
-//        });
 
         OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
             @Override
@@ -91,8 +67,56 @@ public class MainActivity extends AppCompatActivity {
         getOnBackPressedDispatcher().addCallback(this, onBackPressedCallback);
     }
 
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(getApplicationContext(), DailyQuiz.class);
+        QuizConfiguration quizConfiguration = new QuizConfiguration();
+        quizConfiguration.setNumberOfQuestions("10");
+
+        Category selectedCategory = Category.fromId(v.getId());
+        if (selectedCategory != null) {
+            quizConfiguration.setCategory(selectedCategory.getCategoryId());
+        }
+
+        quizConfiguration.setDifficulty("easy"); // Start with easy level
+        intent.putExtra("config", quizConfiguration);
+        startActivity(intent);
+        finish();
+    }
+
     public boolean isInternetConnection() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnectedOrConnecting();
+    }
+
+    public enum Category {
+        MATH(R.id.mathematics_button, "19"),
+        SCIENCE(R.id.science_button, "17"),
+        HISTORY(R.id.history_button, "23");
+
+        private final int id;
+        private final String categoryId;
+
+        Category(int id, String categoryId) {
+            this.id = id;
+            this.categoryId = categoryId;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public String getCategoryId() {
+            return categoryId;
+        }
+
+        public static Category fromId(int id) {
+            for (Category category : values()) {
+                if (category.id == id) {
+                    return category;
+                }
+            }
+            return null;
+        }
     }
 }

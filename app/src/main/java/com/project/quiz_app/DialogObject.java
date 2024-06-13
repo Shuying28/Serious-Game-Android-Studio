@@ -129,34 +129,6 @@ public class DialogObject {
         yesButton.setOnClickListener(v -> {
             dismissDialog();
 
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-            assert user != null;
-
-            DatabaseReference mRef = database.getReference().child("Users").child(user.getUid());
-            mRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    User userFromDB = dataSnapshot.getValue(User.class);
-
-                    Calendar dateTimeNow = Calendar.getInstance();
-                    dateTimeNow.add(Calendar.HOUR_OF_DAY, 24);
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
-                    String dateAndTime = dateFormat.format(dateTimeNow.getTime());
-
-                    assert userFromDB != null;
-                    userFromDB.setDailyQuizAvailableDate(dateAndTime);
-                    userFromDB.setLastDailyQuizScore(0);
-                    userFromDB.setTotalDailyScore(userFromDB.getTotalDailyScore());
-
-                    mRef.setValue(userFromDB);
-                }
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    // Error
-                }
-            });
-
             Intent intent = new Intent(activity, MainActivity.class);
             ActivityOptions options = ActivityOptions.makeCustomAnimation(activity,
                     R.anim.slide_in_left, android.R.anim.slide_out_right);

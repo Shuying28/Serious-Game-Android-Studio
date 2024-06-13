@@ -3310,7 +3310,6 @@ id custom
 id customPanel
 id cut
 id daily_quiz_available_date
-id daily_quiz_button
 id daily_quiz_not_available
 id dark
 id date_picker_actions
@@ -3392,6 +3391,7 @@ id groups
 id hardware
 id header_title
 id hideable
+id history_button
 id home
 id homeAsUp
 id honorRequest
@@ -3468,6 +3468,7 @@ id material_timepicker_mode_button
 id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
+id mathematics_button
 id matrix
 id message
 id message_set_or_change_name
@@ -3592,6 +3593,7 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id science_button
 id screen
 id scroll
 id scrollIndicatorDown

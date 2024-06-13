@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -38,6 +39,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 
 public class DailyQuiz extends AppCompatActivity implements View.OnClickListener {
@@ -68,9 +70,14 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
     }
 
     interface Request {
-        @GET("https://opentdb.com/api.php?amount=10&type=multiple")
-        Call<QuizObject> get();
+        @GET("https://opentdb.com/api.php?type=multiple")
+        Call<QuizObject> get(@Query("amount") String amount,
+                             @Query("difficulty") String difficulty,
+                             @Query("category") String category);
     }
+
+    // Quiz variables
+    QuizConfiguration quizConfiguration;
 
     // Quiz variable
     QuizObject quiz;
@@ -209,7 +216,11 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
         respD.setVisibility(View.VISIBLE);
         nextButton.setVisibility(View.VISIBLE);
 
-        getQuestions();
+        quizConfiguration = (QuizConfiguration) getIntent().getSerializableExtra("config");
+        Log.d("MyApp","helooooo"+quizConfiguration.getCategory()+"har"+quizConfiguration.getDifficulty());
+        if (quizConfiguration != null) {
+            getQuestions();
+        }
     }
 
     @Override
@@ -262,7 +273,10 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
                 .build();
 
         Request request = retrofit.create(Request.class);
-        request.get().enqueue(new Callback<QuizObject>() {
+        request.get(
+                quizConfiguration.getNumberOfQuestions(),
+                quizConfiguration.getDifficulty(),
+                quizConfiguration.getCategory()).enqueue(new Callback<QuizObject>() {
 
             @Override
             public void onResponse(@NonNull Call<QuizObject> call, @NonNull Response<QuizObject> response) {
@@ -293,7 +307,7 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
 
     private void setValuesToQuiz(QuizObject quiz, int index) {
         if (index < 10) {
-
+            Log.d("Hi", "setValuesToQuiz: "+quiz.results.size()+index);
             String question = quiz.results.get(index).getQuestion();
             question = question.replace("&quot;", "'");
             question = question.replace("&#039;", "'");

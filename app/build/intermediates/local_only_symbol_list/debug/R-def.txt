@@ -34,13 +34,13 @@ id close_quiz
 id countdown_number
 id countdown_text
 id daily_quiz_available_date
-id daily_quiz_button
 id daily_quiz_not_available
 id display_name
 id email_register
 id generate_quiz_button
 id generate_random_quiz_button
 id generate_your_quiz_textview
+id history_button
 id imageView
 id imageView2
 id info_daily_quiz_1
@@ -59,6 +59,7 @@ id linearLayout1
 id login_in_register
 id lottie_animated
 id main
+id mathematics_button
 id message_set_or_change_name
 id name_input
 id name_input_layout
@@ -76,6 +77,7 @@ id question
 id questions_left
 id quiz_with_cat
 id register_button
+id science_button
 id set_or_change_name_button
 id start_daily_quiz_button
 id textViewLoading
