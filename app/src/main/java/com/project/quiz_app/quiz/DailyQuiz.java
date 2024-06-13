@@ -229,9 +229,13 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
         Button clickedButton = (Button) v;
 
         if (clickedButton.getId() == R.id.next_button) {
-            if (questionIndex < totalQuestions) {
+            if (questionIndex < 10) {
                 if (!Objects.equals(selectedAnswer, "null")) {
                     highlightAnswers();
+
+                    if (Objects.equals(selectedAnswer, quiz.results.get(questionIndex).correct_answer)) {
+                        score++;
+                    }
 
                     // Add a delay to allow users to see the correct and incorrect answers highlighted
                     new Handler().postDelayed(() -> {
@@ -249,7 +253,7 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
                         countDownTimer.cancel();
                         createCountDownTimer(16000);
                         countDownTimer.start();
-                    }, 2000); // Delay for 2 seconds
+                    }, 500);
                 } else {
                     Toast.makeText(DailyQuiz.this, "You have to select an answer!", Toast.LENGTH_SHORT).show();
                 }
