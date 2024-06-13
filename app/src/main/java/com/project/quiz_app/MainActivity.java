@@ -1,35 +1,20 @@
 package com.project.quiz_app;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.activity.OnBackPressedCallback;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
-import com.project.quiz_app.authentication.Login;
-import com.project.quiz_app.authentication.User;
-import com.project.quiz_app.leaderboard.Leaderboard;
 import com.project.quiz_app.quiz.DailyQuiz;
 import com.project.quiz_app.quiz.QuizMenu;
-
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,18 +31,18 @@ public class MainActivity extends AppCompatActivity {
 
         dailyQuizButton = findViewById(R.id.daily_quiz_button);
         practiceQuizButton = findViewById(R.id.practice_quiz_generate_button);
-        leaderboardButton = findViewById(R.id.leaderboard_button);
-        changeNameButton = findViewById(R.id.change_name_button);
-        logoutButton = findViewById(R.id.logout_button);
+//        leaderboardButton = findViewById(R.id.leaderboard_button);
+//        changeNameButton = findViewById(R.id.change_name_button);
+//        logoutButton = findViewById(R.id.logout_button);
         displayName = findViewById(R.id.display_name);
         title = findViewById(R.id.title);
 
         if(!isInternetConnection()) {
             dailyQuizButton.setVisibility(View.GONE);
             practiceQuizButton.setVisibility(View.GONE);
-            leaderboardButton.setVisibility(View.GONE);
-            changeNameButton.setVisibility(View.GONE);
-            logoutButton.setVisibility(View.GONE);
+//            leaderboardButton.setVisibility(View.GONE);
+//            changeNameButton.setVisibility(View.GONE);
+//            logoutButton.setVisibility(View.GONE);
             displayName.setVisibility(View.GONE);
             title.setVisibility(View.GONE);
 
@@ -78,24 +63,24 @@ public class MainActivity extends AppCompatActivity {
             finish();
         });
 
-        leaderboardButton.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), Leaderboard.class);
-            startActivity(intent);
-            finish();
-        });
-
-        changeNameButton.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), SetOrChangeName.class);
-            startActivity(intent);
-            finish();
-        });
-
-        logoutButton.setOnClickListener(v -> {
-            FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(getApplicationContext(), Login.class);
-            startActivity(intent);
-            finish();
-        });
+//        leaderboardButton.setOnClickListener(v -> {
+//            Intent intent = new Intent(getApplicationContext(), Leaderboard.class);
+//            startActivity(intent);
+//            finish();
+//        });
+//
+//        changeNameButton.setOnClickListener(v -> {
+//            Intent intent = new Intent(getApplicationContext(), SetOrChangeName.class);
+//            startActivity(intent);
+//            finish();
+//        });
+//
+//        logoutButton.setOnClickListener(v -> {
+//            FirebaseAuth.getInstance().signOut();
+//            Intent intent = new Intent(getApplicationContext(), Login.class);
+//            startActivity(intent);
+//            finish();
+//        });
 
         OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
             @Override

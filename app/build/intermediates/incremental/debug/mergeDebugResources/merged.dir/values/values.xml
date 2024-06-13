@@ -657,7 +657,7 @@
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
-    <color name="black">#FF000000</color>
+    <color name="black">#33394F</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
@@ -2216,7 +2216,7 @@
     <string name="project_id" translatable="false">quiz-app-6d190</string>
     <string name="questions_left">Questions left:</string>
     <string name="questions_were_not_generated">Questions were not generated…</string>
-    <string name="quizapp">QuizApp</string>
+    <string name="quizapp">Quiz With Cat</string>
     <string name="register">Register</string>
     <string name="run_quiz_with_options_above">Run quiz with options above</string>
     <string name="score">Score:</string>

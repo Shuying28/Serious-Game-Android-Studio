@@ -206,14 +206,14 @@ ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\s
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:47:13-69
 	android:name
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:45:13-52
-activity#com.project.quiz_app.authentication.Login
+activity#com.project.quiz_app.authentication.JoinJourney
 ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:48:9-52:20
 	android:exported
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:50:13-37
 	android:theme
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:51:13-69
 	android:name
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:49:13-49
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:49:13-55
 activity#com.project.quiz_app.MainActivity
 ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:53:9-56:72
 	android:exported

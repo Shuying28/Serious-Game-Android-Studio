@@ -51,7 +51,7 @@ public class Register extends AppCompatActivity {
         goToLogin = findViewById(R.id.login_in_register);
 
         goToLogin.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), Login.class);
+            Intent intent = new Intent(getApplicationContext(), JoinJourney.class);
             startActivity(intent);
             finish();
         });

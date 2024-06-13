@@ -4,10 +4,6 @@
         "source": "com.project.quiz_app-main-39:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.project.quiz_app-merged_res-37:/layout_activity_login.xml.flat",
-        "source": "com.project.quiz_app-main-39:/layout/activity_login.xml"
-    },
-    {
         "merged": "com.project.quiz_app-merged_res-37:/color_text_input_layout_quiz_options.xml.flat",
         "source": "com.project.quiz_app-main-39:/color/text_input_layout_quiz_options.xml"
     },
@@ -134,6 +130,10 @@
     {
         "merged": "com.project.quiz_app-merged_res-37:/mipmap-hdpi_ic_launcher.webp.flat",
         "source": "com.project.quiz_app-main-39:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.project.quiz_app-merged_res-37:/layout_activity_join_journey.xml.flat",
+        "source": "com.project.quiz_app-main-39:/layout/activity_join_journey.xml"
     },
     {
         "merged": "com.project.quiz_app-merged_res-37:/font_shojumaru.xml.flat",
