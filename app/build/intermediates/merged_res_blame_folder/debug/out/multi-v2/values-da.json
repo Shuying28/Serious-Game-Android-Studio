@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.project.quiz_app-mergeDebugResources-34:/values-da/values-da.xml",
+            "outputFile": "com.project.quiz_app-mergeDebugResources-35:/values-da/values-da.xml",
             "map": [
                 {
                     "source": "C:\\Users\\user\\.gradle\\caches\\transforms-3\\862bc1cdce1c01a860ed8e456f464169\\transformed\\core-1.9.0\\res\\values-da\\values-da.xml",

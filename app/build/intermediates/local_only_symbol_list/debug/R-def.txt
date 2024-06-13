@@ -55,6 +55,7 @@ id linearLayout1
 id login_button
 id login_in_register
 id logout_button
+id main
 id message_set_or_change_name
 id name_input
 id name_input_layout
@@ -94,6 +95,7 @@ layout activity_practice_quiz
 layout activity_quiz_menu
 layout activity_register
 layout activity_set_or_change_name
+layout activity_splash
 layout dialog_close_quiz
 layout dialog_daily_quiz_available
 layout dialog_daily_quiz_not_available

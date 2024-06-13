@@ -31,6 +31,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Material3.Light.NoActionBar" >
         <activity
+            android:name="com.project.quiz_app.SplashActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.project.quiz_app.leaderboard.Leaderboard"
             android:exported="false" />
         <activity
@@ -55,17 +64,12 @@
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
             android:name="com.project.quiz_app.authentication.Login"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.project.quiz_app.MainActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"

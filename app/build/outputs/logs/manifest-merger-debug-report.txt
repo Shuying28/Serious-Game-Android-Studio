@@ -1,11 +1,12 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:2:1-56:12
-INJECTED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:2:1-56:12
-INJECTED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:2:1-56:12
-INJECTED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:2:1-56:12
+ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:2:1-59:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\user\.gradle\caches\transforms-3\d465cb73daca51564ea7fa0a76321e70\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\user\.gradle\caches\transforms-3\333016d9ab36f457ad39c2db7bc55284\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
+MERGED from [com.airbnb.android:lottie:6.3.0] C:\Users\user\.gradle\caches\transforms-3\97720a24239d90faa2257784c287e921\transformed\lottie-6.3.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\user\.gradle\caches\transforms-3\891b997f6a6905d16f3b7546ce1c06da\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\user\.gradle\caches\transforms-3\1862e00d1ecf26ee57c1a966a6d7e274\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\user\.gradle\caches\transforms-3\790fca00e252c2941d8f39f9750cb86b\transformed\firebase-auth-22.3.1\AndroidManifest.xml:17:1-75:12
@@ -37,9 +38,9 @@ MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\user\.gradle\cac
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\user\.gradle\caches\transforms-3\329ee70a926e8766bed837303f5e4190\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.9.0] C:\Users\user\.gradle\caches\transforms-3\862bc1cdce1c01a860ed8e456f464169\transformed\core-1.9.0\AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\user\.gradle\caches\transforms-3\5d1544de2a3e762024b1f79aebada4e5\transformed\savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\user\.gradle\caches\transforms-3\6032651b8bd51b88454ab7ef76385d28\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\user\.gradle\caches\transforms-3\b10009650f915d6f378a4fb8d9db8ee9\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\user\.gradle\caches\transforms-3\dad95d89fcba4e729ece8a3dc223a169\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\user\.gradle\caches\transforms-3\6032651b8bd51b88454ab7ef76385d28\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\user\.gradle\caches\transforms-3\9f3ef57d3a770d0393f92bc56acf0ff1\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\user\.gradle\caches\transforms-3\f2ca8899f216990f3ede3c02f837bf60\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\user\.gradle\caches\transforms-3\279c01888f3f8e5d8d5f2e17a7dc3f10\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:17:1-22:12
@@ -51,10 +52,10 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\c
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\user\.gradle\caches\transforms-3\936ddeee6926d3c13f01354140ed4062\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\user\.gradle\caches\transforms-3\f8086a99e47e82041b0dced566c4cce9\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\user\.gradle\caches\transforms-3\631d0ed9e950994d632e42932ecca6b7\transformed\firebase-components-17.1.5\AndroidManifest.xml:15:1-20:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\user\.gradle\caches\transforms-3\df54aa71d77591e69457a65bd6621e51\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\user\.gradle\caches\transforms-3\ea4683a70fa3ed0039e26b8ef4a2f6d7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\user\.gradle\caches\transforms-3\6093783374f30449b58c46721f50f257\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\user\.gradle\caches\transforms-3\65ed06d5a07c2203fa7c34bb0c7d8b38\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\user\.gradle\caches\transforms-3\df54aa71d77591e69457a65bd6621e51\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9413ddbd0f34b2486adc544c0549f4dd\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\user\.gradle\caches\transforms-3\37ee42a5582ff2eb7fa69a9930fb65d8\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\user\.gradle\caches\transforms-3\05a20ecafedf1ee2bf1f41e5c7aec0ec\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -81,12 +82,14 @@ MERGED from [com.google.android.recaptcha:recaptcha:18.4.0] C:\Users\user\.gradl
 	android:name
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:7:5-54:19
-INJECTED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:7:5-54:19
+ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:7:5-57:19
+INJECTED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:7:5-57:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\user\.gradle\caches\transforms-3\d465cb73daca51564ea7fa0a76321e70\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\user\.gradle\caches\transforms-3\d465cb73daca51564ea7fa0a76321e70\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\user\.gradle\caches\transforms-3\333016d9ab36f457ad39c2db7bc55284\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\user\.gradle\caches\transforms-3\333016d9ab36f457ad39c2db7bc55284\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:6.3.0] C:\Users\user\.gradle\caches\transforms-3\97720a24239d90faa2257784c287e921\transformed\lottie-6.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.airbnb.android:lottie:6.3.0] C:\Users\user\.gradle\caches\transforms-3\97720a24239d90faa2257784c287e921\transformed\lottie-6.3.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\user\.gradle\caches\transforms-3\790fca00e252c2941d8f39f9750cb86b\transformed\firebase-auth-22.3.1\AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\user\.gradle\caches\transforms-3\790fca00e252c2941d8f39f9750cb86b\transformed\firebase-auth-22.3.1\AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-database:20.3.1] C:\Users\user\.gradle\caches\transforms-3\9e8d982d8e1b4003d88625c862437850\transformed\firebase-database-20.3.1\AndroidManifest.xml:25:5-36:19
@@ -113,12 +116,12 @@ MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\user\.g
 MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\user\.gradle\caches\transforms-3\f250221886bdb5d36aa3f164fc3940b5\transformed\play-services-tasks-18.1.0\AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\user\.gradle\caches\transforms-3\4bfa6ebde41cf482265abd5bce78c9b9\transformed\play-services-basement-18.3.0\AndroidManifest.xml:20:5-24:19
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\user\.gradle\caches\transforms-3\4bfa6ebde41cf482265abd5bce78c9b9\transformed\play-services-basement-18.3.0\AndroidManifest.xml:20:5-24:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\user\.gradle\caches\transforms-3\df54aa71d77591e69457a65bd6621e51\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\user\.gradle\caches\transforms-3\df54aa71d77591e69457a65bd6621e51\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\user\.gradle\caches\transforms-3\ea4683a70fa3ed0039e26b8ef4a2f6d7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\user\.gradle\caches\transforms-3\ea4683a70fa3ed0039e26b8ef4a2f6d7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\user\.gradle\caches\transforms-3\6093783374f30449b58c46721f50f257\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\user\.gradle\caches\transforms-3\6093783374f30449b58c46721f50f257\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\user\.gradle\caches\transforms-3\df54aa71d77591e69457a65bd6621e51\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\user\.gradle\caches\transforms-3\df54aa71d77591e69457a65bd6621e51\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 	android:extractNativeLibs
 		INJECTED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
@@ -141,78 +144,84 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\user\.gradle\cache
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:15:9-65
 	android:dataExtractionRules
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:9:9-65
+activity#com.project.quiz_app.SplashActivity
+ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:17:9-24:20
+	android:exported
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:18:13-36
+	android:name
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:17:19-49
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:19:13-23:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:20:17-69
+	android:name
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:20:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:22:27-74
 activity#com.project.quiz_app.leaderboard.Leaderboard
-ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:17:9-19:40
+ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:25:9-27:40
 	android:exported
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:19:13-37
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:18:13-52
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:26:13-52
 activity#com.project.quiz_app.quiz.DailyQuiz
-ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:20:9-23:72
-	android:exported
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:22:13-37
-	android:theme
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:23:13-69
-	android:name
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:21:13-43
-activity#com.project.quiz_app.quiz.QuizMenu
-ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:24:9-27:72
-	android:exported
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:26:13-37
-	android:theme
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:27:13-69
-	android:name
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:25:13-42
-activity#com.project.quiz_app.quiz.PracticeQuiz
 ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:28:9-31:72
 	android:exported
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:30:13-37
 	android:theme
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:31:13-69
 	android:name
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:29:13-46
-activity#com.project.quiz_app.SetOrChangeName
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:29:13-43
+activity#com.project.quiz_app.quiz.QuizMenu
 ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:32:9-35:72
 	android:exported
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:34:13-37
 	android:theme
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:35:13-69
 	android:name
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:33:13-44
-activity#com.project.quiz_app.authentication.Register
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:33:13-42
+activity#com.project.quiz_app.quiz.PracticeQuiz
 ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:36:9-39:72
 	android:exported
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:38:13-37
 	android:theme
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:39:13-69
 	android:name
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:37:13-52
-activity#com.project.quiz_app.authentication.Login
-ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:40:9-49:20
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:37:13-46
+activity#com.project.quiz_app.SetOrChangeName
+ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:40:9-43:72
 	android:exported
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:42:13-36
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:42:13-37
 	android:theme
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:43:13-69
 	android:name
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:41:13-49
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:44:13-48:29
-action#android.intent.action.MAIN
-ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:45:17-69
-	android:name
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:45:25-66
-category#android.intent.category.LAUNCHER
-ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:47:17-77
-	android:name
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:47:27-74
-activity#com.project.quiz_app.MainActivity
-ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:50:9-53:72
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:41:13-44
+activity#com.project.quiz_app.authentication.Register
+ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:44:9-47:72
 	android:exported
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:52:13-36
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:46:13-37
 	android:theme
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:53:13-69
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:47:13-69
 	android:name
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:51:13-41
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:45:13-52
+activity#com.project.quiz_app.authentication.Login
+ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:48:9-52:20
+	android:exported
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:50:13-37
+	android:theme
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:51:13-69
+	android:name
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:49:13-49
+activity#com.project.quiz_app.MainActivity
+ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:53:9-56:72
+	android:exported
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:55:13-37
+	android:theme
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:56:13-69
+	android:name
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:54:13-41
 uses-sdk
 INJECTED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml
@@ -221,6 +230,8 @@ MERGED from [com.google.android.material:material:1.11.0] C:\Users\user\.gradle\
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\user\.gradle\caches\transforms-3\d465cb73daca51564ea7fa0a76321e70\transformed\material-1.11.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\user\.gradle\caches\transforms-3\333016d9ab36f457ad39c2db7bc55284\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\user\.gradle\caches\transforms-3\333016d9ab36f457ad39c2db7bc55284\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:6.3.0] C:\Users\user\.gradle\caches\transforms-3\97720a24239d90faa2257784c287e921\transformed\lottie-6.3.0\AndroidManifest.xml:5:5-44
+MERGED from [com.airbnb.android:lottie:6.3.0] C:\Users\user\.gradle\caches\transforms-3\97720a24239d90faa2257784c287e921\transformed\lottie-6.3.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\user\.gradle\caches\transforms-3\891b997f6a6905d16f3b7546ce1c06da\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\user\.gradle\caches\transforms-3\891b997f6a6905d16f3b7546ce1c06da\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\user\.gradle\caches\transforms-3\1862e00d1ecf26ee57c1a966a6d7e274\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
@@ -283,12 +294,12 @@ MERGED from [androidx.core:core:1.9.0] C:\Users\user\.gradle\caches\transforms-3
 MERGED from [androidx.core:core:1.9.0] C:\Users\user\.gradle\caches\transforms-3\862bc1cdce1c01a860ed8e456f464169\transformed\core-1.9.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\user\.gradle\caches\transforms-3\5d1544de2a3e762024b1f79aebada4e5\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\user\.gradle\caches\transforms-3\5d1544de2a3e762024b1f79aebada4e5\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\user\.gradle\caches\transforms-3\6032651b8bd51b88454ab7ef76385d28\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\user\.gradle\caches\transforms-3\6032651b8bd51b88454ab7ef76385d28\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\user\.gradle\caches\transforms-3\b10009650f915d6f378a4fb8d9db8ee9\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\user\.gradle\caches\transforms-3\b10009650f915d6f378a4fb8d9db8ee9\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\user\.gradle\caches\transforms-3\dad95d89fcba4e729ece8a3dc223a169\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\user\.gradle\caches\transforms-3\dad95d89fcba4e729ece8a3dc223a169\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\user\.gradle\caches\transforms-3\6032651b8bd51b88454ab7ef76385d28\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\user\.gradle\caches\transforms-3\6032651b8bd51b88454ab7ef76385d28\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\user\.gradle\caches\transforms-3\9f3ef57d3a770d0393f92bc56acf0ff1\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\user\.gradle\caches\transforms-3\9f3ef57d3a770d0393f92bc56acf0ff1\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\user\.gradle\caches\transforms-3\f2ca8899f216990f3ede3c02f837bf60\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:5:5-44
@@ -311,14 +322,14 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\user\.gradle\caches\transforms-3\f8086a99e47e82041b0dced566c4cce9\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\user\.gradle\caches\transforms-3\631d0ed9e950994d632e42932ecca6b7\transformed\firebase-components-17.1.5\AndroidManifest.xml:18:5-44
 MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\user\.gradle\caches\transforms-3\631d0ed9e950994d632e42932ecca6b7\transformed\firebase-components-17.1.5\AndroidManifest.xml:18:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\user\.gradle\caches\transforms-3\df54aa71d77591e69457a65bd6621e51\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\user\.gradle\caches\transforms-3\df54aa71d77591e69457a65bd6621e51\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\user\.gradle\caches\transforms-3\ea4683a70fa3ed0039e26b8ef4a2f6d7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\user\.gradle\caches\transforms-3\ea4683a70fa3ed0039e26b8ef4a2f6d7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\user\.gradle\caches\transforms-3\6093783374f30449b58c46721f50f257\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\user\.gradle\caches\transforms-3\6093783374f30449b58c46721f50f257\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\user\.gradle\caches\transforms-3\65ed06d5a07c2203fa7c34bb0c7d8b38\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\user\.gradle\caches\transforms-3\65ed06d5a07c2203fa7c34bb0c7d8b38\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\user\.gradle\caches\transforms-3\df54aa71d77591e69457a65bd6621e51\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\user\.gradle\caches\transforms-3\df54aa71d77591e69457a65bd6621e51\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9413ddbd0f34b2486adc544c0549f4dd\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\user\.gradle\caches\transforms-3\9413ddbd0f34b2486adc544c0549f4dd\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\user\.gradle\caches\transforms-3\37ee42a5582ff2eb7fa69a9930fb65d8\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
