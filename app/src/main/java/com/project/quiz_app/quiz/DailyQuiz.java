@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -225,40 +226,70 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        respA.setBackgroundColor(Color.WHITE);
-        respB.setBackgroundColor(Color.WHITE);
-        respC.setBackgroundColor(Color.WHITE);
-        respD.setBackgroundColor(Color.WHITE);
-
         Button clickedButton = (Button) v;
 
         if (clickedButton.getId() == R.id.next_button) {
-
-            if (questionIndex < 10) {
-                if (Objects.equals(selectedAnswer, quiz.results.get(questionIndex).correct_answer)) {
-                    score++;
-                }
+            if (questionIndex < totalQuestions) {
                 if (!Objects.equals(selectedAnswer, "null")) {
-                    questionIndex++;
-                    setQuestionsLeftTextView();
-                    setValuesToQuiz(quiz, questionIndex);
-                    selectedAnswer = "null";
+                    highlightAnswers();
 
-                    countdownNumberTextView.setTextColor(Color.WHITE);
+                    // Add a delay to allow users to see the correct and incorrect answers highlighted
+                    new Handler().postDelayed(() -> {
+                        questionIndex++;
+                        setQuestionsLeftTextView();
+                        setValuesToQuiz(quiz, questionIndex);
+                        selectedAnswer = "null";
 
-                    countDownTimer.cancel();
-                    createCountDownTimer(16000);
-                    countDownTimer.start();
+                        respA.setBackgroundColor(Color.WHITE);
+                        respB.setBackgroundColor(Color.WHITE);
+                        respC.setBackgroundColor(Color.WHITE);
+                        respD.setBackgroundColor(Color.WHITE);
+
+                        countdownNumberTextView.setTextColor(Color.WHITE);
+                        countDownTimer.cancel();
+                        createCountDownTimer(16000);
+                        countDownTimer.start();
+                    }, 2000); // Delay for 2 seconds
                 } else {
                     Toast.makeText(DailyQuiz.this, "You have to select an answer!", Toast.LENGTH_SHORT).show();
                 }
             }
-
         } else {
             selectedAnswer = clickedButton.getText().toString();
+            respA.setBackgroundColor(Color.WHITE);
+            respB.setBackgroundColor(Color.WHITE);
+            respC.setBackgroundColor(Color.WHITE);
+            respD.setBackgroundColor(Color.WHITE);
             clickedButton.setBackgroundColor(Color.CYAN);
         }
     }
+
+    private void highlightAnswers() {
+        if (respA.getText().toString().equals(quiz.results.get(questionIndex).correct_answer)) {
+            respA.setBackgroundColor(Color.GREEN);
+        } else if (respA.getText().toString().equals(selectedAnswer)) {
+            respA.setBackgroundColor(Color.RED);
+        }
+
+        if (respB.getText().toString().equals(quiz.results.get(questionIndex).correct_answer)) {
+            respB.setBackgroundColor(Color.GREEN);
+        } else if (respB.getText().toString().equals(selectedAnswer)) {
+            respB.setBackgroundColor(Color.RED);
+        }
+
+        if (respC.getText().toString().equals(quiz.results.get(questionIndex).correct_answer)) {
+            respC.setBackgroundColor(Color.GREEN);
+        } else if (respC.getText().toString().equals(selectedAnswer)) {
+            respC.setBackgroundColor(Color.RED);
+        }
+
+        if (respD.getText().toString().equals(quiz.results.get(questionIndex).correct_answer)) {
+            respD.setBackgroundColor(Color.GREEN);
+        } else if (respD.getText().toString().equals(selectedAnswer)) {
+            respD.setBackgroundColor(Color.RED);
+        }
+    }
+
 
     private void setQuestionsLeftTextView() {
         String helper = "Questions left: " + --totalQuestions;
