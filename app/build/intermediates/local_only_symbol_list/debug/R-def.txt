@@ -2,20 +2,24 @@ R_DEF: Internal format may change without notice
 local
 anim slide_in_left
 anim slide_out_right
+array com_google_android_gms_fonts_certs
+array com_google_android_gms_fonts_certs_dev
+array com_google_android_gms_fonts_certs_prod
+array preloaded_fonts
 color aqua
 color black
 color green_for_buttons
 color grey
 color ic_launcher_background
 color input_text
+color mint
 color text_input_layout_quiz_options
 color text_input_layout_stroke_color
 color white
 drawable button_login_register
 drawable gradient_background
-drawable ic_launcher_background
-drawable ic_launcher_foreground
 drawable main_button
+font shojumaru
 id A_response
 id B_response
 id C_response
@@ -55,6 +59,7 @@ id linearLayout1
 id login_button
 id login_in_register
 id logout_button
+id lottie_animated
 id main
 id message_set_or_change_name
 id name_input
@@ -72,6 +77,7 @@ id proceed_with_daily_quiz
 id progressBar2
 id question
 id questions_left
+id quiz_with_cat
 id register_button
 id set_or_change_name_button
 id start_daily_quiz_button
@@ -183,9 +189,5 @@ string total_score
 string try_it_later
 string welcome_back
 string yes
-style Base.Theme.Quizapp
-style TextInputLayoutStyle
-style Theme.Material3.Light
-style Theme.Quizapp
 xml backup_rules
 xml data_extraction_rules

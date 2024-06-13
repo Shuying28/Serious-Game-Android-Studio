@@ -54,6 +54,10 @@
             android:name=".MainActivity"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
