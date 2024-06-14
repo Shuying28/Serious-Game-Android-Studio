@@ -100,10 +100,6 @@
         "source": "com.project.quiz_app-main-39:/layout/dialog_no_internet_connection.xml"
     },
     {
-        "merged": "com.project.quiz_app-merged_res-37:/layout_activity_leaderboard.xml.flat",
-        "source": "com.project.quiz_app-main-39:/layout/activity_leaderboard.xml"
-    },
-    {
         "merged": "com.project.quiz_app-merged_res-37:/layout_dialog_daily_quiz_not_available.xml.flat",
         "source": "com.project.quiz_app-main-39:/layout/dialog_daily_quiz_not_available.xml"
     },
@@ -144,10 +140,6 @@
         "source": "com.project.quiz_app-main-39:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.project.quiz_app-merged_res-37:/layout_activity_set_or_change_name.xml.flat",
-        "source": "com.project.quiz_app-main-39:/layout/activity_set_or_change_name.xml"
-    },
-    {
         "merged": "com.project.quiz_app-merged_res-37:/layout_dialog_info_daily_quiz.xml.flat",
         "source": "com.project.quiz_app-main-39:/layout/dialog_info_daily_quiz.xml"
     },
@@ -166,10 +158,6 @@
     {
         "merged": "com.project.quiz_app-merged_res-37:/xml_backup_rules.xml.flat",
         "source": "com.project.quiz_app-main-39:/xml/backup_rules.xml"
-    },
-    {
-        "merged": "com.project.quiz_app-merged_res-37:/layout_activity_register.xml.flat",
-        "source": "com.project.quiz_app-main-39:/layout/activity_register.xml"
     },
     {
         "merged": "com.project.quiz_app-merged_res-37:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",

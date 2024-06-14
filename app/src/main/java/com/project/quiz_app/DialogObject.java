@@ -20,13 +20,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.project.quiz_app.authentication.User;
 import com.project.quiz_app.quiz.DailyQuiz;
 import com.project.quiz_app.quiz.QuizMenu;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
@@ -168,7 +164,7 @@ public class DialogObject {
         laterButton.setOnClickListener(v -> dismissDialog());
     }
 
-    public void seeDailyQuizResultsDialog(int score, int dailyQuizTotalScore) {
+    public void seeDailyQuizResultsDialog(int score, int dailyQuizTotalScore, String category) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 
         LayoutInflater inflater = activity.getLayoutInflater();
@@ -195,6 +191,9 @@ public class DialogObject {
         okButton.setOnClickListener(v -> {
             dismissDialog();
             Intent intent = new Intent(activity, MainActivity.class);
+            intent.putExtra("category", category);
+            intent.putExtra("score", score);
+            intent.putExtra("totalQuestions", 5);
             activity.startActivity(intent);
             activity.finish();
         });

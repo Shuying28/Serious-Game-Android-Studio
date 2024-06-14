@@ -18,7 +18,7 @@
         android:fontFamily="sans-serif-black"
         android:gravity="start"
         android:text="@string/generate_your_quiz"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -28,9 +28,9 @@
         android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         app:boxStrokeColor="@color/text_input_layout_quiz_options"
-        app:hintTextColor="@color/white">
+        app:hintTextColor="@color/black">
 
         <AutoCompleteTextView
             android:id="@+id/auto_complete_textview_difficulty"
@@ -39,8 +39,8 @@
             android:hint="@string/difficulty"
             android:inputType="none"
             android:text="@string/choose_difficulty"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -50,9 +50,9 @@
         android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         app:boxStrokeColor="@color/text_input_layout_quiz_options"
-        app:hintTextColor="@color/white">
+        app:hintTextColor="@color/black">
 
         <AutoCompleteTextView
             android:id="@+id/auto_complete_textview_category"
@@ -62,8 +62,8 @@
             android:hint="@string/category"
             android:inputType="none"
             android:text="@string/choose_category"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,9 +73,9 @@
         android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         app:boxStrokeColor="@color/text_input_layout_quiz_options"
-        app:hintTextColor="@color/white">
+        app:hintTextColor="@color/black">
 
         <AutoCompleteTextView
             android:id="@+id/auto_complete_textview_number_of_questions"
@@ -84,8 +84,8 @@
             android:hint="@string/number_of_questions"
             android:inputType="none"
             android:text="@string/choose_number_of_questions"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 

@@ -63,7 +63,7 @@
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
-            android:name="com.project.quiz_app.authentication.JoinJourney"
+            android:name="com.project.quiz_app.JoinJourney"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar" >
         </activity>

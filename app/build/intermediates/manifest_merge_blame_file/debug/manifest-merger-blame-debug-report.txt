@@ -116,8 +116,8 @@
 64-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:47:13-69
 65        <activity
 65-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:48:9-52:20
-66            android:name="com.project.quiz_app.authentication.JoinJourney"
-66-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:49:13-55
+66            android:name="com.project.quiz_app.JoinJourney"
+66-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:49:13-40
 67            android:exported="false"
 67-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:50:13-37
 68            android:theme="@style/Theme.Material3.Light.NoActionBar" >

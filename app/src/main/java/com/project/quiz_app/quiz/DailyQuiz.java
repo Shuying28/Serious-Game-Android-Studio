@@ -3,8 +3,11 @@ package com.project.quiz_app.quiz;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -12,25 +15,12 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.project.quiz_app.DialogObject;
 import com.project.quiz_app.R;
-import com.project.quiz_app.authentication.User;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 import java.util.Objects;
 import java.util.Random;
 
@@ -84,16 +74,18 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
     QuizObject quiz;
 
     // Visual variables
-    TextView questionsTextView;
-    TextView questionsLeftTextView;
+    TextView questionsTextView, questionsLeftTextView, correctAnswersTextView, userNameTextView;
     Button respA, respB, respC, respD;
     Button nextButton;
+    LinearLayout resultCard;
 
     // Quiz running variables
     int questionIndex = 0;
     String selectedAnswer = "null";
     int score = 0;
-    int totalQuestions = 10;
+    int totalQuestions = 5;
+
+    int correctAnswer = 0;
 
     // Loading screen
     DialogObject dialogObject = new DialogObject(DailyQuiz.this);
@@ -114,7 +106,10 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.activity_daily_quiz);
 
         questionsLeftTextView = findViewById(R.id.questions_left);
-        questionsLeftTextView.append(" " + totalQuestions);
+        correctAnswersTextView = findViewById(R.id.correct_answers);
+        userNameTextView = findViewById(R.id.user_name);
+        questionsLeftTextView.append(" " + correctAnswer);
+        correctAnswersTextView.append(" " + totalQuestions);
 
         countdownTextTextView = findViewById(R.id.countdown_text);
         countdownNumberTextView = findViewById(R.id.countdown_number);
@@ -124,6 +119,7 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
         respC = findViewById(R.id.C_response);
         respD = findViewById(R.id.D_response);
         nextButton = findViewById(R.id.next_button);
+        resultCard = findViewById(R.id.result_card);
 
         questionsLeftTextView.setVisibility(View.GONE);
         countdownTextTextView.setVisibility(View.GONE);
@@ -134,6 +130,10 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
         respC.setVisibility(View.GONE);
         respD.setVisibility(View.GONE);
         nextButton.setVisibility(View.GONE);
+        resultCard.setVisibility(View.GONE);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("userName", Context.MODE_PRIVATE);
+        userNameTextView.setText(sharedPreferences.getString("userName", ""));
 
         dialogObject.dailyQuizInfoDialog().thenAccept(okPressed -> {
             if (okPressed) {
@@ -216,6 +216,7 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
         respC.setVisibility(View.VISIBLE);
         respD.setVisibility(View.VISIBLE);
         nextButton.setVisibility(View.VISIBLE);
+        resultCard.setVisibility(View.VISIBLE);
 
         quizConfiguration = (QuizConfiguration) getIntent().getSerializableExtra("config");
         Log.d("MyApp","helooooo"+quizConfiguration.getCategory()+"har"+quizConfiguration.getDifficulty());
@@ -235,6 +236,8 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
 
                     if (Objects.equals(selectedAnswer, quiz.results.get(questionIndex).correct_answer)) {
                         score++;
+                        correctAnswer++;
+                        questionsLeftTextView.append(" " + correctAnswer);
                     }
 
                     // Add a delay to allow users to see the correct and incorrect answers highlighted
@@ -341,7 +344,7 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
     }
 
     private void setValuesToQuiz(QuizObject quiz, int index) {
-        if (index < 10) {
+        if (index < 5) {
             Log.d("Hi", "setValuesToQuiz: "+quiz.results.size()+index);
             String question = quiz.results.get(index).getQuestion();
             question = question.replace("&quot;", "'");
@@ -432,14 +435,9 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
             }
 
         } else {
-            Calendar dateTimeNow = Calendar.getInstance();
-            dateTimeNow.add(Calendar.HOUR_OF_DAY, 24);
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
-            String dateAndTime = dateFormat.format(dateTimeNow.getTime());
-
             countDownTimer.onFinish();
             // TODO change ltr
-            dialogObject.seeDailyQuizResultsDialog(score, score);
+            dialogObject.seeDailyQuizResultsDialog(score, score, quizConfiguration.getCategory());
 
             questionsLeftTextView.setVisibility(View.GONE);
             countdownTextTextView.setVisibility(View.GONE);

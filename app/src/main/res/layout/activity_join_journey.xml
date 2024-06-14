@@ -7,20 +7,20 @@
     android:background="@drawable/gradient_background"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".authentication.JoinJourney">
+    tools:context=".JoinJourney">
 
     <TextView
         android:id="@+id/intro"
         android:layout_width="269dp"
         android:layout_height="100dp"
         android:layout_marginStart="83dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="124dp"
         android:layout_marginEnd="59dp"
         android:fontFamily="@font/shojumaru"
         android:text="Heyy, here is a fun journey to gain more knowledge together with cat!"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,11 +33,25 @@
         app:srcCompat="@mipmap/ic_launcher_round"
         tools:layout_editor_absoluteX="0dp" />
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/my_name_is"
+        android:maxLength="15"
+        android:textColor="@color/input_text"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/join_journey_button"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/main_button"
         android:backgroundTint="@color/aqua"
         android:text="Join Journey"
@@ -47,6 +61,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/name_input" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

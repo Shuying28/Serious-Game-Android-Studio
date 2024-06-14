@@ -3268,7 +3268,6 @@ id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
-id cancel_set_or_change_button
 id carryVelocity
 id center
 id centerCrop
@@ -3300,6 +3299,7 @@ id contentPanel
 id contiguous
 id continuousVelocity
 id coordinator
+id correct_answers
 id cos
 id countdown_number
 id countdown_text
@@ -3350,7 +3350,6 @@ id east
 id edge
 id edit_query
 id elastic
-id email_register
 id embed
 id enabled
 id end
@@ -3392,9 +3391,11 @@ id hardware
 id header_title
 id hideable
 id history_button
+id history_score_text
 id home
 id homeAsUp
 id honorRequest
+id horizontalScrollView
 id horizontal_only
 id icon
 id icon_group
@@ -3425,10 +3426,6 @@ id labeled
 id later_daily_quiz
 id layout
 id layoutSelectat
-id leadeboard_table_layout
-id leaderboard_linear_layout
-id leaderboard_next_button
-id leaderboard_previous_button
 id left
 id leftToRight
 id legacy
@@ -3436,10 +3433,8 @@ id light
 id line1
 id line3
 id linear
-id linearLayout1
 id listMode
 id list_item
-id login_in_register
 id lottie_animated
 id lottie_layer_name
 id m3_side_sheet
@@ -3468,10 +3463,10 @@ id material_timepicker_mode_button
 id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
+id math_score_text
 id mathematics_button
 id matrix
 id message
-id message_set_or_change_name
 id middle
 id mini
 id month_grid
@@ -3506,7 +3501,6 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
 id name_input
-id name_input_layout
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3557,7 +3551,6 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
-id password_register
 id password_toggle
 id path
 id pathRelative
@@ -3578,9 +3571,9 @@ id quiz_with_cat
 id radio
 id ratio
 id rectangles
-id register_button
 id report_drawn
 id restart
+id result_card
 id reverse
 id reverseSawtooth
 id right
@@ -3594,11 +3587,13 @@ id save_overlay_view
 id sawtooth
 id scale
 id science_button
+id science_score_text
 id screen
 id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scroll_quiz
 id scrollable
 id search_badge
 id search_bar
@@ -3613,7 +3608,6 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
-id set_or_change_name_button
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3698,6 +3692,7 @@ id title_template
 id toggle
 id top
 id topPanel
+id total_questions
 id touch_outside
 id transitionToEnd
 id transitionToStart
@@ -3713,6 +3708,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_name
 id vertical_only
 id view_offset_helper
 id view_transition
@@ -3852,12 +3848,9 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_daily_quiz
 layout activity_join_journey
-layout activity_leaderboard
 layout activity_main
 layout activity_practice_quiz
 layout activity_quiz_menu
-layout activity_register
-layout activity_set_or_change_name
 layout activity_splash
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row

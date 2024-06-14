@@ -6,8 +6,6 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.project.quiz_app.authentication.JoinJourney;
-
 public class SplashActivity extends AppCompatActivity {
 
     private Handler handler = new Handler();
