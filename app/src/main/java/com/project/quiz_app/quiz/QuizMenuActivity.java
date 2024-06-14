@@ -33,7 +33,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class QuizMenu extends AppCompatActivity {
+public class QuizMenuActivity extends AppCompatActivity {
 
 
     // Buttons
@@ -59,7 +59,7 @@ public class QuizMenu extends AppCompatActivity {
     Calendar dateAndTimeAfter24h;
 
     // Dialog object
-    DialogObject dialogObject = new DialogObject(QuizMenu.this);
+    DialogObject dialogObject = new DialogObject(QuizMenuActivity.this);
 
     // Generate your quiz textview
     TextView generateYourQuizTextView;
@@ -86,7 +86,7 @@ public class QuizMenu extends AppCompatActivity {
         autoCompleteTextViewDifficulty.setAdapter(adapterItems);
         autoCompleteTextViewDifficulty.setOnItemClickListener((adapterView, view, position, id) -> {
             String item = adapterView.getItemAtPosition(position).toString();
-            Toast.makeText(QuizMenu.this, "Difficulty: " + item, Toast.LENGTH_SHORT).show();
+            Toast.makeText(QuizMenuActivity.this, "Difficulty: " + item, Toast.LENGTH_SHORT).show();
         });
 
 
@@ -95,7 +95,7 @@ public class QuizMenu extends AppCompatActivity {
         autoCompleteTextViewCategory.setAdapter(adapterItems);
         autoCompleteTextViewCategory.setOnItemClickListener((adapterView, view, position, id) -> {
             String item = adapterView.getItemAtPosition(position).toString();
-            Toast.makeText(QuizMenu.this, "Category: " + item, Toast.LENGTH_SHORT).show();
+            Toast.makeText(QuizMenuActivity.this, "Category: " + item, Toast.LENGTH_SHORT).show();
         });
 
         autoCompleteTextViewQuestionsNumber = findViewById(R.id.auto_complete_textview_number_of_questions);
@@ -103,7 +103,7 @@ public class QuizMenu extends AppCompatActivity {
         autoCompleteTextViewQuestionsNumber.setAdapter(adapterItems);
         autoCompleteTextViewQuestionsNumber.setOnItemClickListener((adapterView, view, position, id) -> {
             String item = adapterView.getItemAtPosition(position).toString();
-            Toast.makeText(QuizMenu.this, "Number of questions: " + item, Toast.LENGTH_SHORT).show();
+            Toast.makeText(QuizMenuActivity.this, "Number of questions: " + item, Toast.LENGTH_SHORT).show();
         });
 
         // Generate quiz with configuration
@@ -120,7 +120,7 @@ public class QuizMenu extends AppCompatActivity {
             generateQuizWithConfigurationButton.setVisibility(View.GONE);
             generateRandomQuizButton.setVisibility(View.GONE);
 
-            Intent intent = new Intent(getApplicationContext(), PracticeQuiz.class);
+            Intent intent = new Intent(getApplicationContext(), PracticeQuizActivity.class);
 
             QuizConfiguration quizConfiguration = new QuizConfiguration();
             String category = autoCompleteTextViewCategory.getText().toString();
@@ -153,7 +153,7 @@ public class QuizMenu extends AppCompatActivity {
             textInputLayoutAmount.setVisibility(View.GONE);
             generateQuizWithConfigurationButton.setVisibility(View.GONE);
             generateRandomQuizButton.setVisibility(View.GONE);
-            Intent intent = new Intent(getApplicationContext(), PracticeQuiz.class);
+            Intent intent = new Intent(getApplicationContext(), PracticeQuizActivity.class);
             intent.putExtra("config", new QuizConfiguration(
                     "0", "0", "10"));
             startActivity(intent);

@@ -11,17 +11,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.project.quiz_app.quiz.DailyQuiz;
+import com.project.quiz_app.quiz.DailyQuizActivity;
 import com.project.quiz_app.quiz.QuizConfiguration;
-import com.project.quiz_app.quiz.QuizMenu;
-
-import java.util.concurrent.atomic.AtomicReference;
+import com.project.quiz_app.quiz.QuizMenuActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView displayName, title, mathScoreTextView, scienceScoreTextView, historyScoreTextView;
+    TextView displayName, mathScoreTextView, scienceScoreTextView, historyScoreTextView;
+    ImageView catTrivia;
     Button practiceQuizButton, mathematicsButton, scienceButton, historyButton;;
     DialogObject dialogObject = new DialogObject(MainActivity.this);
 
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         historyButton = findViewById(R.id.history_button);
         practiceQuizButton = findViewById(R.id.practice_quiz_generate_button);
         displayName = findViewById(R.id.display_name);
-        title = findViewById(R.id.title);
+        catTrivia = findViewById(R.id.cat_trivia);
 
         mathScoreTextView = findViewById(R.id.math_score_text);
         scienceScoreTextView = findViewById(R.id.science_score_text);
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mathematicsButton.setVisibility(View.GONE);
             practiceQuizButton.setVisibility(View.GONE);
             displayName.setVisibility(View.GONE);
-            title.setVisibility(View.GONE);
+            catTrivia.setVisibility(View.GONE);
             mathScoreTextView.setVisibility(View.GONE);
             scienceScoreTextView.setVisibility(View.GONE);
             historyScoreTextView.setVisibility(View.GONE);
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         // Get the name from SharedPreferences
-        SharedPreferences sharedPreferences = getSharedPreferences("userName", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("userPreferences", Context.MODE_PRIVATE);
         String userName = sharedPreferences.getString("userName", "Guest");
 
         // Display the name
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         historyButton.setOnClickListener(this);
 
         practiceQuizButton.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), QuizMenu.class);
+            Intent intent = new Intent(getApplicationContext(), QuizMenuActivity.class);
             startActivity(intent);
             finish();
         });
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(getApplicationContext(), DailyQuiz.class);
+        Intent intent = new Intent(getApplicationContext(), DailyQuizActivity.class);
         QuizConfiguration quizConfiguration = new QuizConfiguration();
         quizConfiguration.setNumberOfQuestions("5");
 
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void saveScore(String category, int score, int totalQuestions) {
-        SharedPreferences sharedPreferences = getSharedPreferences("QuizScores", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("userPreferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         int correctRate = (score * 100) / totalQuestions;
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void updateScoreUI() {
-        SharedPreferences sharedPreferences = getSharedPreferences("QuizScores", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("userPreferences", MODE_PRIVATE);
 
         int mathScore = sharedPreferences.getInt("Mathematics_score", 0);
         int mathCorrectRate = sharedPreferences.getInt("Mathematics_correct_rate", 0);

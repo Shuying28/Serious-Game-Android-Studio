@@ -17,16 +17,17 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/shojumaru</item>
     </array>
-    <color name="aqua">#009999</color>
-    <color name="black">#33394F</color>
-    <color name="green_for_buttons">#5AA8AF</color>
-    <color name="grey">#C0C0C0</color>
+    <color name="aqua">#36DEE3</color>
+    <color name="black">#0B0A1B</color>
+    <color name="dark_blue">#262956</color>
     <color name="ic_launcher_background">#FFEAD7</color>
-    <color name="input_text">#66FF94</color>
-    <color name="mint">#BAFFB4</color>
+    <color name="orange">#F8D34D</color>
+    <color name="pink">#F57892</color>
+    <color name="purple_button">#7293E4</color>
+    <color name="purple_text">#BABEFF</color>
     <color name="white">#FFFFFFFF</color>
     <string name="a">A</string>
-    <string name="app_name">QuizWithCat</string>
+    <string name="app_name">Cat Trivia</string>
     <string name="available_date">Available date:</string>
     <string name="b">B</string>
     <string name="back_to_login">back to Login</string>

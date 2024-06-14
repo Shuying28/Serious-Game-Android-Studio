@@ -27,7 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-public class PracticeQuiz extends AppCompatActivity implements View.OnClickListener {
+public class PracticeQuizActivity extends AppCompatActivity implements View.OnClickListener {
 
     interface Request {
         @GET("https://opentdb.com/api.php?type=multiple")
@@ -53,7 +53,7 @@ public class PracticeQuiz extends AppCompatActivity implements View.OnClickListe
     int totalQuestions = 0;
 
     // Loading screen
-    DialogObject dialogObject = new DialogObject(PracticeQuiz.this);
+    DialogObject dialogObject = new DialogObject(PracticeQuizActivity.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +73,7 @@ public class PracticeQuiz extends AppCompatActivity implements View.OnClickListe
             getQuestions();
         } else {
             Toast.makeText(getApplicationContext(), "Something went wrong...", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getApplicationContext(), QuizMenu.class);
+            Intent intent = new Intent(getApplicationContext(), QuizMenuActivity.class);
             ActivityOptions options = ActivityOptions.makeCustomAnimation(getApplicationContext(),
                     R.anim.slide_in_left, android.R.anim.slide_out_right);
             startActivity(intent, options.toBundle());
@@ -115,7 +115,7 @@ public class PracticeQuiz extends AppCompatActivity implements View.OnClickListe
                     setValuesToQuiz(quiz, questionIndex);
                     selectedAnswer = "null";
                 } else {
-                    Toast.makeText(PracticeQuiz.this, "You have to select an answer!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PracticeQuizActivity.this, "You have to select an answer!", Toast.LENGTH_SHORT).show();
                 }
             }
         } else {
@@ -155,7 +155,7 @@ public class PracticeQuiz extends AppCompatActivity implements View.OnClickListe
                     setValuesToQuiz(quiz, 0);
                 } else {
                     questionsTextView.setText(R.string.questions_were_not_generated);
-                    Intent intent = new Intent(getApplicationContext(), PracticeQuiz.class);
+                    Intent intent = new Intent(getApplicationContext(), PracticeQuizActivity.class);
                     startActivity(intent);
                 }
                 dialogObject.dismissDialog();
@@ -164,7 +164,7 @@ public class PracticeQuiz extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onFailure(@NonNull Call<QuizObject> call, @NonNull Throwable t) {
                 questionsTextView.setText(R.string.questions_were_not_generated);
-                Intent intent = new Intent(getApplicationContext(), PracticeQuiz.class);
+                Intent intent = new Intent(getApplicationContext(), PracticeQuizActivity.class);
                 startActivity(intent);
             }
         });

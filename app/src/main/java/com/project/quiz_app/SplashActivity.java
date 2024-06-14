@@ -19,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, JoinJourney.class);
+                Intent intent = new Intent(SplashActivity.this, JoinJourneyActivity.class);
                 startActivity(intent);
                 finish();
             }

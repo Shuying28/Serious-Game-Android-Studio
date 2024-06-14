@@ -1417,6 +1417,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color dark_blue
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1463,12 +1464,9 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
-color green_for_buttons
-color grey
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color ic_launcher_background
-color input_text
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -2065,7 +2063,6 @@ color material_timepicker_button_stroke
 color material_timepicker_clock_text_color
 color material_timepicker_clockface
 color material_timepicker_modebutton_tint
-color mint
 color mtrl_btn_bg_color_selector
 color mtrl_btn_ripple_color
 color mtrl_btn_stroke_color_selector
@@ -2123,6 +2120,8 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color orange
+color pink
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -2131,6 +2130,8 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color purple_button
+color purple_text
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -3025,8 +3026,18 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable avatar1
+drawable avatar2
+drawable avatar3
+drawable avatar4
+drawable avatar5
+drawable avatar6
+drawable avatar7
+drawable avatar8
+drawable avatar9
 drawable avd_hide_password
 drawable avd_show_password
+drawable border_image
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3036,6 +3047,7 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable button_login_register
+drawable cat_trivia
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3055,6 +3067,8 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable dark_bg
+drawable dark_blue_background
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -3147,9 +3161,11 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable select_avatar
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+font kavoon
 font shojumaru
 id ALT
 id A_response
@@ -3248,6 +3264,15 @@ id auto_complete_textview_category
 id auto_complete_textview_difficulty
 id auto_complete_textview_number_of_questions
 id automatic
+id avatar1
+id avatar2
+id avatar3
+id avatar4
+id avatar5
+id avatar6
+id avatar7
+id avatar8
+id avatar9
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3269,6 +3294,7 @@ id cache_measures
 id callMeasure
 id cancel_button
 id carryVelocity
+id cat_trivia
 id center
 id centerCrop
 id centerInside
@@ -3404,7 +3430,6 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageView
 id imageView2
 id immediateStop
 id included
@@ -3570,6 +3595,7 @@ id questions_left
 id quiz_with_cat
 id radio
 id ratio
+id ready
 id rectangles
 id report_drawn
 id restart
@@ -3605,8 +3631,11 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id select_avatar
+id select_avatar_button
 id select_dialog_listview
 id selected
+id selected_avatar
 id selection_type
 id sharedValueSet
 id sharedValueUnset
@@ -3851,6 +3880,7 @@ layout activity_join_journey
 layout activity_main
 layout activity_practice_quiz
 layout activity_quiz_menu
+layout activity_select_avatar
 layout activity_splash
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row

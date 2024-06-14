@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="240dp"
             android:fontFamily="@font/shojumaru"
-            android:text="Quiz With Cat"
+            android:text="Loading..."
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

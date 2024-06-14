@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">QuizWithCat</string>
+    <string name="app_name">Cat Trivia</string>
 
     <!-- Login/Register Quiz XML strings-->
     <string name="login">Login</string>

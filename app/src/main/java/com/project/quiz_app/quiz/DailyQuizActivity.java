@@ -3,7 +3,6 @@ package com.project.quiz_app.quiz;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -33,7 +32,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 
-public class DailyQuiz extends AppCompatActivity implements View.OnClickListener {
+public class DailyQuizActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onPause() {
@@ -88,7 +87,7 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
     int correctAnswer = 0;
 
     // Loading screen
-    DialogObject dialogObject = new DialogObject(DailyQuiz.this);
+    DialogObject dialogObject = new DialogObject(DailyQuizActivity.this);
 
     // Daily quiz compare variables
     Calendar dateAndTimeNow;
@@ -108,8 +107,8 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
         questionsLeftTextView = findViewById(R.id.questions_left);
         correctAnswersTextView = findViewById(R.id.correct_answers);
         userNameTextView = findViewById(R.id.user_name);
-        questionsLeftTextView.append(" " + correctAnswer);
-        correctAnswersTextView.append(" " + totalQuestions);
+        questionsLeftTextView.append(" " + totalQuestions);
+        correctAnswersTextView.setText("Correct: "+correctAnswer);
 
         countdownTextTextView = findViewById(R.id.countdown_text);
         countdownNumberTextView = findViewById(R.id.countdown_number);
@@ -132,7 +131,7 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
         nextButton.setVisibility(View.GONE);
         resultCard.setVisibility(View.GONE);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("userName", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("userPreferences", Context.MODE_PRIVATE);
         userNameTextView.setText(sharedPreferences.getString("userName", ""));
 
         dialogObject.dailyQuizInfoDialog().thenAccept(okPressed -> {
@@ -237,7 +236,7 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
                     if (Objects.equals(selectedAnswer, quiz.results.get(questionIndex).correct_answer)) {
                         score++;
                         correctAnswer++;
-                        questionsLeftTextView.append(" " + correctAnswer);
+                        correctAnswersTextView.setText("Correct: "+correctAnswer);
                     }
 
                     // Add a delay to allow users to see the correct and incorrect answers highlighted
@@ -258,7 +257,7 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
                         countDownTimer.start();
                     }, 500);
                 } else {
-                    Toast.makeText(DailyQuiz.this, "You have to select an answer!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DailyQuizActivity.this, "You have to select an answer!", Toast.LENGTH_SHORT).show();
                 }
             }
         } else {
@@ -324,7 +323,7 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
                     setValuesToQuiz(quiz, 0);
                 } else {
                     questionsTextView.setText(R.string.questions_were_not_generated);
-                    startActivity(new Intent(getApplicationContext(), DailyQuiz.class));
+                    startActivity(new Intent(getApplicationContext(), DailyQuizActivity.class));
                 }
                 dialogObject.dismissDialog();
                 countDownTimer.start();
@@ -333,7 +332,7 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onFailure(@NonNull Call<QuizObject> call, @NonNull Throwable t) {
                 questionsTextView.setText(R.string.questions_were_not_generated);
-                Intent intent = new Intent(getApplicationContext(), PracticeQuiz.class);
+                Intent intent = new Intent(getApplicationContext(), PracticeQuizActivity.class);
                 startActivity(intent);
             }
         });
@@ -448,6 +447,7 @@ public class DailyQuiz extends AppCompatActivity implements View.OnClickListener
             respC.setVisibility(View.GONE);
             respD.setVisibility(View.GONE);
             nextButton.setVisibility(View.GONE);
+            resultCard.setVisibility(View.GONE);
         }
     }
 

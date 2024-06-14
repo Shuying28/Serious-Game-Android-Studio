@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="@drawable/dark_blue_background"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".quiz.PracticeQuiz">
+    tools:context=".quiz.PracticeQuizActivity">
 
     <TextView
         android:id="@+id/questions_left"

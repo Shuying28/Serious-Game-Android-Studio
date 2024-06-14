@@ -20,8 +20,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.project.quiz_app.quiz.DailyQuiz;
-import com.project.quiz_app.quiz.QuizMenu;
+import com.project.quiz_app.quiz.DailyQuizActivity;
+import com.project.quiz_app.quiz.QuizMenuActivity;
 
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
@@ -73,7 +73,7 @@ public class DialogObject {
 
         okButton.setOnClickListener(v -> {
             dismissDialog();
-            Intent intent = new Intent(activity, QuizMenu.class);
+            Intent intent = new Intent(activity, QuizMenuActivity.class);
             activity.startActivity(intent);
             activity.finish();
         });
@@ -156,7 +156,7 @@ public class DialogObject {
 
         proceedButton.setOnClickListener(v -> {
             dismissDialog();
-            Intent intent = new Intent(activity, DailyQuiz.class);
+            Intent intent = new Intent(activity, DailyQuizActivity.class);
             activity.startActivity(intent);
             activity.finish();
         });
