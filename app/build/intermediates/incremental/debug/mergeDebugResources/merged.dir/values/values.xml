@@ -11504,6 +11504,14 @@
         <attr name="android:name"/>
         <attr name="android:tag"/>
     </declare-styleable>
+    <declare-styleable name="GifTextureView">
+        <attr format="reference|string" name="gifSource"/>
+        <attr format="boolean" name="isOpaque"/>
+    </declare-styleable>
+    <declare-styleable name="GifView">
+        <attr format="boolean" name="freezesAnimation"/>
+        <attr format="integer" name="loopCount"/>
+    </declare-styleable>
     <declare-styleable name="GradientColor">
         
         <attr name="android:startColor"/>

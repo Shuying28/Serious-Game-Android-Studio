@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/dark_blue_background"
+    android:background="@drawable/dark_bg"
     android:padding="16dp"
     android:gravity="center">
 
@@ -17,81 +17,84 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/avatar1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="8dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="12dp"
             android:src="@drawable/avatar1" />
 
         <ImageView
             android:id="@+id/avatar2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="8dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="12dp"
             android:src="@drawable/avatar2" />
 
         <ImageView
             android:id="@+id/avatar3"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="8dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="12dp"
             android:src="@drawable/avatar3" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/avatar4"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="8dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="12dp"
             android:src="@drawable/avatar4" />
 
         <ImageView
             android:id="@+id/avatar5"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="8dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="12dp"
             android:src="@drawable/avatar5" />
 
         <ImageView
             android:id="@+id/avatar6"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="8dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="12dp"
             android:src="@drawable/avatar6" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/avatar7"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="8dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="12dp"
             android:src="@drawable/avatar7" />
 
         <ImageView
             android:id="@+id/avatar8"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="8dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="12dp"
             android:src="@drawable/avatar8" />
 
         <ImageView
             android:id="@+id/avatar9"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="8dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="12dp"
             android:src="@drawable/avatar9" />
     </LinearLayout>
 

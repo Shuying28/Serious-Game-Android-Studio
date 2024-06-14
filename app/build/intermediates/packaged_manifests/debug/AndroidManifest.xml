@@ -46,15 +46,15 @@
             android:name="com.project.quiz_app.leaderboard.Leaderboard"
             android:exported="false" />
         <activity
-            android:name="com.project.quiz_app.quiz.DailyQuiz"
+            android:name="com.project.quiz_app.quiz.DailyQuizActivity"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
-            android:name="com.project.quiz_app.quiz.QuizMenu"
+            android:name="com.project.quiz_app.quiz.QuizMenuActivity"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
-            android:name="com.project.quiz_app.quiz.PracticeQuiz"
+            android:name="com.project.quiz_app.quiz.PracticeQuizActivity"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
@@ -66,7 +66,7 @@
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
-            android:name="com.project.quiz_app.JoinJourney"
+            android:name="com.project.quiz_app.JoinJourneyActivity"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity

@@ -1,187 +1,360 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_blue"
-    android:gravity="center"
-    android:orientation="vertical"
+    android:background="@drawable/bg_with_cat"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/ready"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="Discover our custom quizzes to challenge your knowledge."
-        android:textColor="@color/purple_text"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/intro"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/intro"
-        app:layout_constraintTop_toBottomOf="@+id/intro" />
-
-    <TextView
-        android:id="@+id/intro"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/kavoon"
-        android:gravity="center"
-        android:text="MORE THAN 10 KNOWLEDGE CATEGORIES AVAILABLE"
-        android:textColor="@color/white"
-        android:textSize="26sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cat_trivia" />
-
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/display_name">
+        android:padding="16dp">
 
         <LinearLayout
-            android:id="@+id/scroll_quiz"
+            android:id="@+id/cat_trivia_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_marginRight="15dp"
+                app:srcCompat="@mipmap/ic_launcher_round" />
+
+            <ImageView
+                android:id="@+id/cat_trivia"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/cat_trivia"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/user_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="left"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cat_trivia_bar"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/user_avatar"
+                android:layout_width="50dp"
+                android:layout_height="55dp"
+                android:layout_marginRight="15dp"
+                app:srcCompat="@drawable/avatar1" />
+
+            <TextView
+                android:id="@+id/display_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/kavoon"
+                android:gravity="center"
+                android:text="@string/loading_name"
+                android:textColor="@color/purple_text"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+<!--        <TextView-->
+<!--            android:id="@+id/display_name"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:fontFamily="@font/kavoon"-->
+<!--            android:gravity="start"-->
+<!--            android:text="@string/loading_name"-->
+<!--            android:textColor="@color/purple_text"-->
+<!--            android:textSize="25sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/cat_trivia_bar" />-->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mathematics_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/dark_blue"
+            app:layout_constraintEnd_toStartOf="@+id/science_card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_info">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/math" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Mathematics"
+                    android:fontFamily="@font/kavoon"
+                    android:textColor="@color/purple_text"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/math_score_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Math Score: 0"
+                        android:textSize="12sp"
+                        android:textColor="@color/purple_text" />
+                    <TextView
+                        android:id="@+id/math_rate_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Correct Rate: 0%"
+                        android:textSize="12sp"
+                        android:textColor="@color/purple_text" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/science_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/dark_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/mathematics_card"
+            app:layout_constraintTop_toBottomOf="@+id/user_info">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/science" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/kavoon"
+                    android:text="Science"
+                    android:textColor="@color/purple_text"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/science_score_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Science Score: 0"
+                        android:textSize="12sp"
+                        android:textColor="@color/purple_text" />
+                    <TextView
+                        android:id="@+id/science_rate_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Correct Rate: 0%"
+                        android:textSize="12sp"
+                        android:textColor="@color/purple_text" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/history_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/dark_blue"
+            app:layout_constraintEnd_toEndOf="@+id/mathematics_card"
+            app:layout_constraintStart_toStartOf="@+id/mathematics_card"
+            app:layout_constraintTop_toBottomOf="@+id/mathematics_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/video_games" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/kavoon"
+                    android:text="History"
+                    android:textColor="@color/purple_text"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/history_score_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textSize="12sp"
+                        android:text="History Score: 0"
+                        android:textColor="@color/purple_text" />
+                    <TextView
+                        android:id="@+id/history_rate_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="Correct Rate: 0%"
+                        android:textColor="@color/purple_text" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/animals_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/dark_blue"
+            app:layout_constraintEnd_toEndOf="@+id/science_card"
+            app:layout_constraintStart_toStartOf="@+id/science_card"
+            app:layout_constraintTop_toBottomOf="@+id/science_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/animals" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/kavoon"
+                    android:text="Animals"
+                    android:textColor="@color/purple_text"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/animals_score_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Animals Score: 0"
+                        android:textSize="12sp"
+                        android:textColor="@color/purple_text" />
+                    <TextView
+                        android:id="@+id/animals_rate_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Correct Rate: 0%"
+                        android:textSize="12sp"
+                        android:textColor="@color/purple_text" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_animated"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginEnd="-30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/animals_card"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="animated-cat.json"
+            app:lottie_loop="true" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="6sp"
-                android:orientation="vertical">
+        <TextView
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-30dp"
+            android:layout_marginEnd="70dp"
+            android:fontFamily="@font/shojumaru"
+            android:text="Meowww, practice makes perfect!"
+            android:textColor="@color/purple_text"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/practice_quiz_generate_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/lottie_animated"
+            app:layout_constraintTop_toBottomOf="@+id/animals_card" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/mathematics_button"
-                    android:layout_width="100sp"
-                    android:layout_height="100sp"
-                    android:background="@drawable/main_button"
-                    android:text="Mathematics"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="22sp" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/practice_quiz_generate_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="-80dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/circle_button"
+            android:text="@string/practice"
+            android:fontFamily="@font/kavoon"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottie_animated" />
 
-                <TextView
-                    android:id="@+id/math_score_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Math Score: 0, Correct Rate: 0%"
-                    android:textColor="@color/white" />
-            </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="6sp"
-                android:orientation="vertical">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/science_button"
-                    android:layout_width="100sp"
-                    android:layout_height="100sp"
-                    android:background="@drawable/main_button"
-                    android:text="Science"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="22sp" />
-
-                <TextView
-                    android:id="@+id/science_score_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Science Score: 0, Correct Rate: 0%"
-                    android:textColor="@color/white" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="6sp"
-                android:orientation="vertical">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/history_button"
-                    android:layout_width="100sp"
-                    android:layout_height="100sp"
-                    android:background="@drawable/main_button"
-                    android:text="History"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="22sp" />
-
-                <TextView
-                    android:id="@+id/history_score_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="History Score: 0, Correct Rate: 0%"
-                    android:textColor="@color/white" />
-            </LinearLayout>
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <ImageView
-        android:id="@+id/cat_trivia"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="70dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cat_trivia" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cat_trivia"
-        app:layout_constraintEnd_toStartOf="@+id/cat_trivia"
-        app:layout_constraintHorizontal_bias="0.91"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cat_trivia"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@mipmap/ic_launcher_round" />
-
-    <TextView
-        android:id="@+id/display_name"
-        android:layout_width="300sp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/kavoon"
-        android:gravity="start"
-        android:text="@string/loading_name"
-        android:textColor="@color/purple_text"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.252"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ready" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/practice_quiz_generate_button"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
-        android:layout_margin="6sp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/main_button"
-        android:text="@string/practice"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>

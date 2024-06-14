@@ -2,6 +2,7 @@ package com.project.quiz_app;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,9 +21,11 @@ import com.project.quiz_app.quiz.QuizMenuActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView displayName, mathScoreTextView, scienceScoreTextView, historyScoreTextView;
-    ImageView catTrivia;
-    Button practiceQuizButton, mathematicsButton, scienceButton, historyButton;;
+    TextView displayName, mathScoreTextView, scienceScoreTextView, historyScoreTextView, animalsScoreTextView, mathRateTextView, scienceRateTextView, historyRateTextView, animalsRateTextView;
+    ImageView catTrivia, userAvatar;
+    Button practiceQuizButton;
+
+    CardView mathematicsButton, scienceButton, historyButton, animalsButton;
     DialogObject dialogObject = new DialogObject(MainActivity.this);
 
     @Override
@@ -35,7 +38,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int score = getIntent().getIntExtra("score", 0);
         int totalQuestions = getIntent().getIntExtra("totalQuestions", 0);
 
-        Log.d("TAG", "onCreate: "+category);
         // Save the score and correct rate in SharedPreferences
         if (category != null) {
             saveScore(category, score, totalQuestions);
@@ -43,25 +45,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Update the UI with the saved scores
         updateScoreUI();
 
-        mathematicsButton = findViewById(R.id.mathematics_button);
-        scienceButton = findViewById(R.id.science_button);
-        historyButton = findViewById(R.id.history_button);
+        mathematicsButton = findViewById(R.id.mathematics_card);
+        scienceButton = findViewById(R.id.science_card);
+        historyButton = findViewById(R.id.history_card);
+        animalsButton = findViewById(R.id.animals_card);
         practiceQuizButton = findViewById(R.id.practice_quiz_generate_button);
         displayName = findViewById(R.id.display_name);
         catTrivia = findViewById(R.id.cat_trivia);
+        userAvatar = findViewById(R.id.user_avatar);
 
         mathScoreTextView = findViewById(R.id.math_score_text);
         scienceScoreTextView = findViewById(R.id.science_score_text);
         historyScoreTextView = findViewById(R.id.history_score_text);
+        animalsScoreTextView = findViewById(R.id.animals_score_text);
+        mathRateTextView = findViewById(R.id.math_rate_text);
+        scienceRateTextView = findViewById(R.id.science_rate_text);
+        historyRateTextView = findViewById(R.id.history_rate_text);
+        animalsRateTextView = findViewById(R.id.animals_rate_text);
 
         if(!isInternetConnection()) {
             mathematicsButton.setVisibility(View.GONE);
+            scienceButton.setVisibility(View.GONE);
+            historyButton.setVisibility(View.GONE);
+            animalsButton.setVisibility(View.GONE);
             practiceQuizButton.setVisibility(View.GONE);
             displayName.setVisibility(View.GONE);
             catTrivia.setVisibility(View.GONE);
+            userAvatar.setVisibility(View.GONE);
             mathScoreTextView.setVisibility(View.GONE);
             scienceScoreTextView.setVisibility(View.GONE);
             historyScoreTextView.setVisibility(View.GONE);
+            animalsScoreTextView.setVisibility(View.GONE);
+            mathRateTextView.setVisibility(View.GONE);
+            scienceRateTextView.setVisibility(View.GONE);
+            historyRateTextView.setVisibility(View.GONE);
+            animalsRateTextView.setVisibility(View.GONE);
 
             dialogObject.noInternetConnectionDialog();
         }
@@ -69,6 +87,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Get the name from SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("userPreferences", Context.MODE_PRIVATE);
         String userName = sharedPreferences.getString("userName", "Guest");
+        int selectedAvatar = sharedPreferences.getInt("selectedAvatar", -1);
+
+        if (selectedAvatar != -1) {
+            userAvatar.setImageResource(selectedAvatar);
+        }
 
         // Display the name
         displayName.setText("Hello, "+userName);
@@ -76,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mathematicsButton.setOnClickListener(this);
         scienceButton.setOnClickListener(this);
         historyButton.setOnClickListener(this);
+        animalsButton.setOnClickListener(this);
 
         practiceQuizButton.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), QuizMenuActivity.class);
@@ -132,6 +156,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 editor.putInt("History_score", score);
                 editor.putInt("History_correct_rate", correctRate);
                 break;
+            case "27":
+                editor.putInt("Animals_score", score);
+                editor.putInt("Animals_correct_rate", correctRate);
+                break;
         }
         editor.apply();
     }
@@ -148,20 +176,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int historyScore = sharedPreferences.getInt("History_score", 0);
         int historyCorrectRate = sharedPreferences.getInt("History_correct_rate", 0);
 
-        TextView mathScoreText = findViewById(R.id.math_score_text);
-        mathScoreText.setText("Math Score: " + mathScore + ", Correct Rate: " + mathCorrectRate + "%");
+        int animalsScore = sharedPreferences.getInt("Animals_score", 0);
+        int animalsCorrectRate = sharedPreferences.getInt("Animals_correct_rate", 0);
 
-        TextView scienceScoreText = findViewById(R.id.science_score_text);
-        scienceScoreText.setText("Science Score: " + scienceScore + ", Correct Rate: " + scienceCorrectRate + "%");
+        mathScoreTextView = findViewById(R.id.math_score_text);
+        scienceScoreTextView = findViewById(R.id.science_score_text);
+        historyScoreTextView = findViewById(R.id.history_score_text);
+        animalsScoreTextView = findViewById(R.id.animals_score_text);
+        mathRateTextView = findViewById(R.id.math_rate_text);
+        scienceRateTextView = findViewById(R.id.science_rate_text);
+        historyRateTextView = findViewById(R.id.history_rate_text);
+        animalsRateTextView = findViewById(R.id.animals_rate_text);
 
-        TextView historyScoreText = findViewById(R.id.history_score_text);
-        historyScoreText.setText("History Score: " + historyScore + ", Correct Rate: " + historyCorrectRate + "%");
+        mathScoreTextView.setText("Math Score: " + mathScore);
+        scienceScoreTextView.setText("Science Score: " + scienceScore);
+        historyScoreTextView.setText("History Score: " + historyScore);
+        animalsScoreTextView.setText("Animals Score: " + animalsScore);
+        mathRateTextView.setText("Correct Rate: " + mathCorrectRate + "%");
+        scienceRateTextView.setText("Correct Rate: " + scienceCorrectRate + "%");
+        historyRateTextView.setText("Correct Rate: " + historyCorrectRate + "%");
+        animalsRateTextView.setText("Correct Rate: " + animalsCorrectRate + "%");
     }
 
     public enum Category {
-        MATH(R.id.mathematics_button, "19"),
-        SCIENCE(R.id.science_button, "17"),
-        HISTORY(R.id.history_button, "23");
+        MATH(R.id.mathematics_card, "19"),
+        SCIENCE(R.id.science_card, "17"),
+        HISTORY(R.id.history_card, "23"),
+        ANIMALS(R.id.animals_card, "27");
 
         private final int id;
         private final String categoryId;

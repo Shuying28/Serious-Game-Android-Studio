@@ -609,8 +609,10 @@ attr forceApplySystemWindowInsetTop
 attr forceDefaultNavigationOnClickListener
 attr foregroundInsidePadding
 attr framePosition
+attr freezesAnimation
 attr gapBetweenBars
 attr gestureInsetBottomIgnored
+attr gifSource
 attr goIcon
 attr guidelineUseRtl
 attr haloColor
@@ -666,6 +668,7 @@ attr isLightTheme
 attr isMaterial3DynamicColorApplied
 attr isMaterial3Theme
 attr isMaterialTheme
+attr isOpaque
 attr itemActiveIndicatorStyle
 attr itemBackground
 attr itemFillColor
@@ -805,6 +808,7 @@ attr logo
 attr logoAdjustViewBounds
 attr logoDescription
 attr logoScaleType
+attr loopCount
 attr lottieAnimationViewStyle
 attr lottie_asyncUpdates
 attr lottie_autoPlay
@@ -3026,6 +3030,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable animals
 drawable avatar1
 drawable avatar2
 drawable avatar3
@@ -3037,6 +3042,7 @@ drawable avatar8
 drawable avatar9
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_with_cat
 drawable border_image
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -3048,6 +3054,7 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable button_login_register
 drawable cat_trivia
+drawable circle_button
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3068,7 +3075,6 @@ drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable dark_bg
-drawable dark_blue_background
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -3111,6 +3117,7 @@ drawable material_ic_keyboard_arrow_previous_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable math
 drawable mtrl_bottomsheet_drag_handle
 drawable mtrl_checkbox_button
 drawable mtrl_checkbox_button_checked_unchecked
@@ -3161,10 +3168,12 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable science
 drawable select_avatar
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable video_games
 font kavoon
 font shojumaru
 id ALT
@@ -3249,6 +3258,9 @@ id aligned
 id all
 id allStates
 id always
+id animals_card
+id animals_rate_text
+id animals_score_text
 id animateToEnd
 id animateToStart
 id antiClockwise
@@ -3295,6 +3307,7 @@ id callMeasure
 id cancel_button
 id carryVelocity
 id cat_trivia
+id cat_trivia_bar
 id center
 id centerCrop
 id centerInside
@@ -3416,12 +3429,12 @@ id groups
 id hardware
 id header_title
 id hideable
-id history_button
+id history_card
+id history_rate_text
 id history_score_text
 id home
 id homeAsUp
 id honorRequest
-id horizontalScrollView
 id horizontal_only
 id icon
 id icon_group
@@ -3488,8 +3501,9 @@ id material_timepicker_mode_button
 id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
+id math_rate_text
 id math_score_text
-id mathematics_button
+id mathematics_card
 id matrix
 id message
 id middle
@@ -3612,14 +3626,14 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
-id science_button
+id science_card
+id science_rate_text
 id science_score_text
 id screen
 id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
-id scroll_quiz
 id scrollable
 id search_badge
 id search_bar
@@ -3737,6 +3751,8 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_avatar
+id user_info
 id user_name
 id vertical_only
 id view_offset_helper
@@ -5406,6 +5422,8 @@ styleable FontFamilyFont android_font android_fontWeight android_fontStyle andro
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
 styleable Fragment android_name android_id android_tag
 styleable FragmentContainerView android_name android_tag
+styleable GifTextureView gifSource isOpaque
+styleable GifView freezesAnimation loopCount
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable ImageFilterView altSrc blendSrc brightness contrast crossfade imagePanX imagePanY imageRotate imageZoom overlay round roundPercent saturation warmth

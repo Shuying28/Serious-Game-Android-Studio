@@ -48,6 +48,7 @@ MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\user\.g
 MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\user\.gradle\caches\transforms-3\4bfa6ebde41cf482265abd5bce78c9b9\transformed\play-services-basement-18.3.0\AndroidManifest.xml:16:1-26:12
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\user\.gradle\caches\transforms-3\0ac88c350fe4bbb9cbfe12193bd956a3\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.8.0] C:\Users\user\.gradle\caches\transforms-3\385ca6362a2e46bc9cbeec877bc0ec14\transformed\activity-1.8.0\AndroidManifest.xml:17:1-22:12
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.28] C:\Users\user\.gradle\caches\transforms-3\fb7a9d232dc2f875e49c01ebeedf8e85\transformed\android-gif-drawable-1.2.28\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\caches\transforms-3\d64011f42a731375a71e9b3f8ede4115\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\user\.gradle\caches\transforms-3\936ddeee6926d3c13f01354140ed4062\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\user\.gradle\caches\transforms-3\f8086a99e47e82041b0dced566c4cce9\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -61,6 +62,7 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\user\.gradle\caches
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\user\.gradle\caches\transforms-3\05a20ecafedf1ee2bf1f41e5c7aec0ec\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\user\.gradle\caches\transforms-3\5161590883c03dbf365cfef8505f9770\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\user\.gradle\caches\transforms-3\9ed3540d49c7dab22940a1c02e88974d\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\user\.gradle\caches\transforms-3\3b343927b2f9eebccc27814ff7ea4ad4\transformed\relinker-1.4.5\AndroidManifest.xml:2:1-7:12
 	package
 		INJECTED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -172,30 +174,30 @@ ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\s
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:31:13-37
 	android:name
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:30:13-52
-activity#com.project.quiz_app.quiz.DailyQuiz
+activity#com.project.quiz_app.quiz.DailyQuizActivity
 ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:32:9-35:72
 	android:exported
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:34:13-37
 	android:theme
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:35:13-69
 	android:name
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:33:13-43
-activity#com.project.quiz_app.quiz.QuizMenu
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:33:13-51
+activity#com.project.quiz_app.quiz.QuizMenuActivity
 ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:36:9-39:72
 	android:exported
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:38:13-37
 	android:theme
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:39:13-69
 	android:name
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:37:13-42
-activity#com.project.quiz_app.quiz.PracticeQuiz
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:37:13-50
+activity#com.project.quiz_app.quiz.PracticeQuizActivity
 ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:40:9-43:72
 	android:exported
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:42:13-37
 	android:theme
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:43:13-69
 	android:name
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:41:13-46
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:41:13-54
 activity#com.project.quiz_app.SetOrChangeName
 ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:44:9-47:72
 	android:exported
@@ -212,14 +214,14 @@ ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\s
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:51:13-69
 	android:name
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:49:13-52
-activity#com.project.quiz_app.JoinJourney
+activity#com.project.quiz_app.JoinJourneyActivity
 ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:52:9-55:81
 	android:exported
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:54:13-37
 	android:theme
 		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:55:13-69
 	android:name
-		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:53:13-40
+		ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:53:13-48
 activity#com.project.quiz_app.MainActivity
 ADDED from C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:56:9-59:72
 	android:exported
@@ -326,6 +328,8 @@ MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\user\.gradle\caches\tran
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\user\.gradle\caches\transforms-3\0ac88c350fe4bbb9cbfe12193bd956a3\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.8.0] C:\Users\user\.gradle\caches\transforms-3\385ca6362a2e46bc9cbeec877bc0ec14\transformed\activity-1.8.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.8.0] C:\Users\user\.gradle\caches\transforms-3\385ca6362a2e46bc9cbeec877bc0ec14\transformed\activity-1.8.0\AndroidManifest.xml:20:5-44
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.28] C:\Users\user\.gradle\caches\transforms-3\fb7a9d232dc2f875e49c01ebeedf8e85\transformed\android-gif-drawable-1.2.28\AndroidManifest.xml:5:5-44
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.28] C:\Users\user\.gradle\caches\transforms-3\fb7a9d232dc2f875e49c01ebeedf8e85\transformed\android-gif-drawable-1.2.28\AndroidManifest.xml:5:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\caches\transforms-3\d64011f42a731375a71e9b3f8ede4115\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\caches\transforms-3\d64011f42a731375a71e9b3f8ede4115\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\user\.gradle\caches\transforms-3\936ddeee6926d3c13f01354140ed4062\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
@@ -352,6 +356,8 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\user\.gradle\caches\transforms
 MERGED from [androidx.print:print:1.0.0] C:\Users\user\.gradle\caches\transforms-3\5161590883c03dbf365cfef8505f9770\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\user\.gradle\caches\transforms-3\9ed3540d49c7dab22940a1c02e88974d\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\user\.gradle\caches\transforms-3\9ed3540d49c7dab22940a1c02e88974d\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\user\.gradle\caches\transforms-3\3b343927b2f9eebccc27814ff7ea4ad4\transformed\relinker-1.4.5\AndroidManifest.xml:5:5-43
+MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\user\.gradle\caches\transforms-3\3b343927b2f9eebccc27814ff7ea4ad4\transformed\relinker-1.4.5\AndroidManifest.xml:5:5-43
 	tools:overrideLibrary
 		ADDED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\user\.gradle\caches\transforms-3\790fca00e252c2941d8f39f9750cb86b\transformed\firebase-auth-22.3.1\AndroidManifest.xml:23:9-61
 	android:targetSdkVersion

@@ -4,20 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dark_blue_background"
+    android:background="@drawable/dark_bg"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".JoinJourneyActivity">
 
-    <ImageView
-        android:id="@+id/cat_trivia"
-        android:layout_width="200dp"
+    <LinearLayout
+        android:id="@+id/cat_trivia_bar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cat_trivia" />
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_marginRight="15dp"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+        <ImageView
+            android:id="@+id/cat_trivia"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/cat_trivia"
+            android:gravity="center" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/ready"
@@ -44,7 +61,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cat_trivia" />
+        app:layout_constraintTop_toBottomOf="@+id/cat_trivia_bar" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/name_input"

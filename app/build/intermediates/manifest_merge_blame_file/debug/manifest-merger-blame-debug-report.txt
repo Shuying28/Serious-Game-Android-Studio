@@ -82,24 +82,24 @@
 47-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:31:13-37
 48        <activity
 48-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:32:9-35:72
-49            android:name="com.project.quiz_app.quiz.DailyQuiz"
-49-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:33:13-43
+49            android:name="com.project.quiz_app.quiz.DailyQuizActivity"
+49-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:33:13-51
 50            android:exported="false"
 50-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:34:13-37
 51            android:theme="@style/Theme.Material3.Light.NoActionBar" />
 51-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:35:13-69
 52        <activity
 52-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:36:9-39:72
-53            android:name="com.project.quiz_app.quiz.QuizMenu"
-53-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:37:13-42
+53            android:name="com.project.quiz_app.quiz.QuizMenuActivity"
+53-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:37:13-50
 54            android:exported="false"
 54-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:38:13-37
 55            android:theme="@style/Theme.Material3.Light.NoActionBar" />
 55-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:39:13-69
 56        <activity
 56-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:40:9-43:72
-57            android:name="com.project.quiz_app.quiz.PracticeQuiz"
-57-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:41:13-46
+57            android:name="com.project.quiz_app.quiz.PracticeQuizActivity"
+57-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:41:13-54
 58            android:exported="false"
 58-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:42:13-37
 59            android:theme="@style/Theme.Material3.Light.NoActionBar" />
@@ -122,8 +122,8 @@
 67-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:51:13-69
 68        <activity
 68-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:52:9-55:81
-69            android:name="com.project.quiz_app.JoinJourney"
-69-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:53:13-40
+69            android:name="com.project.quiz_app.JoinJourneyActivity"
+69-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:53:13-48
 70            android:exported="false"
 70-->C:\Users\user\AndroidStudioProjects\Serious-Game-Android-Studio\app\src\main\AndroidManifest.xml:54:13-37
 71            android:theme="@style/Theme.Material3.Light.NoActionBar" />
