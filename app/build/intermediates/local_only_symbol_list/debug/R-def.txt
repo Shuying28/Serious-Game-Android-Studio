@@ -107,6 +107,7 @@ id math_difficulty_text
 id math_rate_text
 id math_score_text
 id mathematics_card
+id meow
 id music_card
 id music_difficulty_text
 id music_rate_text
