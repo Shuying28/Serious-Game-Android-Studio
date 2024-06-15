@@ -2125,7 +2125,6 @@ color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
 color orange
-color pink
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -2136,6 +2135,7 @@ color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
 color purple_button
 color purple_text
+color red
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -3043,7 +3043,6 @@ drawable avatar9
 drawable avd_hide_password
 drawable avd_show_password
 drawable bg_with_cat
-drawable border_image
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3054,6 +3053,7 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable button_login_register
 drawable cat_trivia
+drawable circle_border_image
 drawable circle_button
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -3074,12 +3074,14 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable computer
 drawable dark_bg
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable gambateh
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradient_background
@@ -3095,6 +3097,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable keep_it_up
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
 drawable m3_bottom_sheet_drag_handle
@@ -3155,6 +3158,7 @@ drawable mtrl_switch_thumb_unchecked_pressed
 drawable mtrl_switch_track
 drawable mtrl_switch_track_decoration
 drawable mtrl_tabs_default_indicator
+drawable music
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -3168,6 +3172,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable rec_border_image
+drawable sad
 drawable science
 drawable select_avatar
 drawable test_level_drawable
@@ -3259,6 +3265,7 @@ id all
 id allStates
 id always
 id animals_card
+id animals_difficulty_text
 id animals_rate_text
 id animals_score_text
 id animateToEnd
@@ -3330,6 +3337,10 @@ id close_quiz
 id closest
 id collapseActionView
 id compress
+id computers_card
+id computers_difficulty_text
+id computers_rate_text
+id computers_score_text
 id confirm_button
 id constraint
 id container
@@ -3364,6 +3375,8 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id dialog_button
+id difficulty_level
+id difficulty_text
 id dimensions
 id direct
 id disableHome
@@ -3429,9 +3442,6 @@ id groups
 id hardware
 id header_title
 id hideable
-id history_card
-id history_rate_text
-id history_score_text
 id home
 id homeAsUp
 id honorRequest
@@ -3451,6 +3461,10 @@ id info
 id info_daily_quiz_1
 id info_daily_quiz_2
 id info_daily_quiz_3
+id info_daily_quiz_4
+id info_daily_quiz_5
+id info_daily_quiz_6
+id info_daily_quiz_7
 id info_daily_quiz_title
 id intro
 id invisible
@@ -3471,6 +3485,7 @@ id light
 id line1
 id line3
 id linear
+id linearLayout
 id listMode
 id list_item
 id lottie_animated
@@ -3501,6 +3516,7 @@ id material_timepicker_mode_button
 id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
+id math_difficulty_text
 id math_rate_text
 id math_score_text
 id mathematics_card
@@ -3539,6 +3555,11 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id music_card
+id music_difficulty_text
+id music_rate_text
+id music_score_text
+id my_name
 id name_input
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
@@ -3601,7 +3622,6 @@ id postLayout
 id practice_quiz_generate_button
 id pressed
 id proceed_with_daily_quiz
-id progressBar2
 id progress_circular
 id progress_horizontal
 id question
@@ -3627,6 +3647,7 @@ id save_overlay_view
 id sawtooth
 id scale
 id science_card
+id science_difficulty_text
 id science_rate_text
 id science_score_text
 id screen
@@ -3661,6 +3682,7 @@ id sin
 id skipCollapsed
 id skipped
 id slide
+id slogan
 id snackbar_action
 id snackbar_text
 id snap
@@ -3712,7 +3734,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textViewLoading
 id text_input_end_icon
 id text_input_error_icon
 id text_input_layout_amount
@@ -3735,7 +3756,6 @@ id title_template
 id toggle
 id top
 id topPanel
-id total_questions
 id touch_outside
 id transitionToEnd
 id transitionToStart
@@ -3755,6 +3775,10 @@ id user_avatar
 id user_info
 id user_name
 id vertical_only
+id video_card
+id video_difficulty_text
+id video_rate_text
+id video_score_text
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -3992,6 +4016,8 @@ mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 raw firebase_common_keep
+raw happy_bg
+raw trivia_quiz_bg
 string a
 string abc_action_bar_home_description
 string abc_action_bar_up_description

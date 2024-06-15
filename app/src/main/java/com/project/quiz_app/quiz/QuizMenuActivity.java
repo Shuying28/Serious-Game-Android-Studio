@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -42,12 +43,8 @@ public class QuizMenuActivity extends AppCompatActivity {
 
     // Options
     String[] difficultyItem = {"Any Difficulty", "Easy", "Medium", "Hard"};
-    String[] categoryItem = {"Any Category", "General Knowledge", "Books", "Film", "Music",
-            "Musicals & Theaters", "Television", "Video Games", "Board Games",
-            "Science & Nature", "Computers", "Mathematics", "Mythology",
-            "Sports", "Geography", "History", "Politics",
-            "Art", "Celebrities", "Animals", "Vehicles",
-            "Comics", "Gadgets", "Anime & Manga", "Cartoon & Animations"};
+    String[] categoryItem = {"Any Category", "Music", "Video Games",
+            "Science & Nature", "Computers", "Mathematics", "Animals"};
     String[] numberItem = {"5", "10", "25", "50"};
     AutoCompleteTextView autoCompleteTextViewDifficulty;
     AutoCompleteTextView autoCompleteTextViewCategory;
@@ -68,6 +65,16 @@ public class QuizMenuActivity extends AppCompatActivity {
     TextInputLayout textInputLayoutDifficulty;
     TextInputLayout textInputLayoutCategory;
     TextInputLayout textInputLayoutAmount;
+    private MediaPlayer mediaPlayer;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +82,10 @@ public class QuizMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz_menu);
         // Removed Firebase-related checks
 //        checkDailyQuiz();
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.trivia_quiz_bg);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
 
         generateYourQuizTextView = findViewById(R.id.generate_your_quiz_textview);
         textInputLayoutDifficulty = findViewById(R.id.text_input_layout_difficulty);

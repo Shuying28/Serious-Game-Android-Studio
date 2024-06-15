@@ -25,6 +25,10 @@ public class JoinJourneyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join_journey);
 
+        // Start the background music service
+        Intent musicIntent = new Intent(this, BackgroundMusicService.class);
+        startService(musicIntent);
+
         loginButton = findViewById(R.id.join_journey_button);
         selectAvatarButton = findViewById(R.id.select_avatar_button);
         nameTextInputEditText = findViewById(R.id.name_input);
@@ -77,5 +81,14 @@ public class JoinJourneyActivity extends AppCompatActivity {
                 editor.apply();
             }
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        // Optionally, stop the service when the activity is destroyed
+//        Intent musicIntent = new Intent(this, BackgroundMusicService.class);
+//        stopService(musicIntent);
     }
 }

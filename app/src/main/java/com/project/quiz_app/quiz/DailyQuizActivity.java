@@ -8,12 +8,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,11 +36,19 @@ import retrofit2.http.Query;
 
 public class DailyQuizActivity extends AppCompatActivity implements View.OnClickListener {
 
+    // Constants for level keys
+    private static final String PREFS_NAME = "userPreferences";
+
+    private SharedPreferences sharedPreferences;
+
     @Override
     protected void onPause() {
         super.onPause();
         countDownTimer.cancel();
         this.millisUntilFinished = Long.parseLong(countdownNumberTextView.getText().toString()) * 1000;
+        if (mediaPlayer != null) {
+            mediaPlayer.pause();
+        }
     }
 
     // onResume is called when the activity is created,
@@ -53,9 +63,21 @@ public class DailyQuizActivity extends AppCompatActivity implements View.OnClick
             countdownNumberTextView.setText(String.valueOf((int) this.millisUntilFinished / 1000));
             createCountDownTimer(this.millisUntilFinished);
             countDownTimer.start();
+            if (mediaPlayer != null) {
+                mediaPlayer.start();
+            }
         } else {
             createCountDownTimer(16000);
             dailyQuizActivityCreated = true;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
         }
     }
 
@@ -83,8 +105,8 @@ public class DailyQuizActivity extends AppCompatActivity implements View.OnClick
     String selectedAnswer = "null";
     int score = 0;
     int totalQuestions = 5;
-
     int correctAnswer = 0;
+    private MediaPlayer mediaPlayer;
 
     // Loading screen
     DialogObject dialogObject = new DialogObject(DailyQuizActivity.this);
@@ -95,23 +117,32 @@ public class DailyQuizActivity extends AppCompatActivity implements View.OnClick
 
     // CountDown variables
     TextView countdownTextTextView;
-    TextView countdownNumberTextView;
+    TextView countdownNumberTextView, difficultyTextView, difficultyLevelTextView;
     CountDownTimer countDownTimer;
     long millisUntilFinished = 16000;
+    ImageView userAvatar;
+    // Flag to check if the quiz has ended
+    boolean quizEnded = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_quiz);
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.trivia_quiz_bg);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
+
         questionsLeftTextView = findViewById(R.id.questions_left);
         correctAnswersTextView = findViewById(R.id.correct_answers);
         userNameTextView = findViewById(R.id.user_name);
         questionsLeftTextView.append(" " + totalQuestions);
-        correctAnswersTextView.setText("Correct: "+correctAnswer);
+        correctAnswersTextView.setText(correctAnswer + " / 5");
 
         countdownTextTextView = findViewById(R.id.countdown_text);
         countdownNumberTextView = findViewById(R.id.countdown_number);
+        difficultyLevelTextView = findViewById(R.id.difficulty_level);
+        difficultyTextView = findViewById(R.id.difficulty_text);
         questionsTextView = findViewById(R.id.question);
         respA = findViewById(R.id.A_response);
         respB = findViewById(R.id.B_response);
@@ -119,10 +150,13 @@ public class DailyQuizActivity extends AppCompatActivity implements View.OnClick
         respD = findViewById(R.id.D_response);
         nextButton = findViewById(R.id.next_button);
         resultCard = findViewById(R.id.result_card);
+        userAvatar = findViewById(R.id.user_avatar);
 
         questionsLeftTextView.setVisibility(View.GONE);
         countdownTextTextView.setVisibility(View.GONE);
         countdownNumberTextView.setVisibility(View.GONE);
+        difficultyLevelTextView.setVisibility(View.GONE);
+        difficultyTextView.setVisibility(View.GONE);
         questionsTextView.setVisibility(View.GONE);
         respA.setVisibility(View.GONE);
         respB.setVisibility(View.GONE);
@@ -130,9 +164,15 @@ public class DailyQuizActivity extends AppCompatActivity implements View.OnClick
         respD.setVisibility(View.GONE);
         nextButton.setVisibility(View.GONE);
         resultCard.setVisibility(View.GONE);
+        userAvatar.setVisibility(View.GONE);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("userPreferences", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         userNameTextView.setText(sharedPreferences.getString("userName", ""));
+        int selectedAvatar = sharedPreferences.getInt("selectedAvatar", -1);
+
+        if (selectedAvatar != -1) {
+            userAvatar.setImageResource(selectedAvatar);
+        }
 
         dialogObject.dailyQuizInfoDialog().thenAccept(okPressed -> {
             if (okPressed) {
@@ -185,14 +225,15 @@ public class DailyQuizActivity extends AppCompatActivity implements View.OnClick
         // if 15 second pass, the user will be
         // redirected to the next question with no score modifications
         if (questionIndex < 10) {
-            respA.setBackgroundColor(Color.WHITE);
-            respB.setBackgroundColor(Color.WHITE);
-            respC.setBackgroundColor(Color.WHITE);
-            respD.setBackgroundColor(Color.WHITE);
+            respA.setBackgroundColor(Color.parseColor("#262956"));
+            respB.setBackgroundColor(Color.parseColor("#262956"));
+            respC.setBackgroundColor(Color.parseColor("#262956"));
+            respD.setBackgroundColor(Color.parseColor("#262956"));
             countdownNumberTextView.setTextColor(Color.WHITE);
 
             questionIndex++;
             setQuestionsLeftTextView();
+            Log.d("TAG", "timeUp: "+questionIndex);
             setValuesToQuiz(quiz, questionIndex);
             selectedAnswer = "null";
 
@@ -209,6 +250,8 @@ public class DailyQuizActivity extends AppCompatActivity implements View.OnClick
         questionsLeftTextView.setVisibility(View.VISIBLE);
         countdownTextTextView.setVisibility(View.VISIBLE);
         countdownNumberTextView.setVisibility(View.VISIBLE);
+        difficultyLevelTextView.setVisibility(View.VISIBLE);
+        difficultyTextView.setVisibility(View.VISIBLE);
         questionsTextView.setVisibility(View.VISIBLE);
         respA.setVisibility(View.VISIBLE);
         respB.setVisibility(View.VISIBLE);
@@ -216,10 +259,14 @@ public class DailyQuizActivity extends AppCompatActivity implements View.OnClick
         respD.setVisibility(View.VISIBLE);
         nextButton.setVisibility(View.VISIBLE);
         resultCard.setVisibility(View.VISIBLE);
+        userAvatar.setVisibility(View.VISIBLE);
 
         quizConfiguration = (QuizConfiguration) getIntent().getSerializableExtra("config");
-        Log.d("MyApp","helooooo"+quizConfiguration.getCategory()+"har"+quizConfiguration.getDifficulty());
         if (quizConfiguration != null) {
+            String currentDifficulty = quizConfiguration.getDifficulty();
+            Log.d("TAG", "startDailyQuiz: "+currentDifficulty);
+            difficultyLevelTextView.setText(currentDifficulty);
+
             getQuestions();
         }
     }
@@ -236,7 +283,7 @@ public class DailyQuizActivity extends AppCompatActivity implements View.OnClick
                     if (Objects.equals(selectedAnswer, quiz.results.get(questionIndex).correct_answer)) {
                         score++;
                         correctAnswer++;
-                        correctAnswersTextView.setText("Correct: "+correctAnswer);
+                        correctAnswersTextView.setText(correctAnswer + " / 5");
                     }
 
                     // Add a delay to allow users to see the correct and incorrect answers highlighted
@@ -246,10 +293,10 @@ public class DailyQuizActivity extends AppCompatActivity implements View.OnClick
                         setValuesToQuiz(quiz, questionIndex);
                         selectedAnswer = "null";
 
-                        respA.setBackgroundColor(Color.WHITE);
-                        respB.setBackgroundColor(Color.WHITE);
-                        respC.setBackgroundColor(Color.WHITE);
-                        respD.setBackgroundColor(Color.WHITE);
+                        respA.setBackgroundColor(Color.parseColor("#262956"));
+                        respB.setBackgroundColor(Color.parseColor("#262956"));
+                        respC.setBackgroundColor(Color.parseColor("#262956"));
+                        respD.setBackgroundColor(Color.parseColor("#262956"));
 
                         countdownNumberTextView.setTextColor(Color.WHITE);
                         countDownTimer.cancel();
@@ -262,43 +309,46 @@ public class DailyQuizActivity extends AppCompatActivity implements View.OnClick
             }
         } else {
             selectedAnswer = clickedButton.getText().toString();
-            respA.setBackgroundColor(Color.WHITE);
-            respB.setBackgroundColor(Color.WHITE);
-            respC.setBackgroundColor(Color.WHITE);
-            respD.setBackgroundColor(Color.WHITE);
-            clickedButton.setBackgroundColor(Color.CYAN);
+            respA.setBackgroundColor(Color.parseColor("#262956"));
+            respB.setBackgroundColor(Color.parseColor("#262956"));
+            respC.setBackgroundColor(Color.parseColor("#262956"));
+            respD.setBackgroundColor(Color.parseColor("#262956"));
+            clickedButton.setBackgroundColor(Color.parseColor("#F8D34D"));
         }
     }
 
     private void highlightAnswers() {
         if (respA.getText().toString().equals(quiz.results.get(questionIndex).correct_answer)) {
-            respA.setBackgroundColor(Color.GREEN);
+            respA.setBackgroundColor(Color.parseColor("#3FDBA3"));
         } else if (respA.getText().toString().equals(selectedAnswer)) {
-            respA.setBackgroundColor(Color.RED);
+            respA.setBackgroundColor(Color.parseColor("#FF5B5B"));
         }
 
         if (respB.getText().toString().equals(quiz.results.get(questionIndex).correct_answer)) {
-            respB.setBackgroundColor(Color.GREEN);
+            respB.setBackgroundColor(Color.parseColor("#3FDBA3"));
         } else if (respB.getText().toString().equals(selectedAnswer)) {
-            respB.setBackgroundColor(Color.RED);
+            respB.setBackgroundColor(Color.parseColor("#FF5B5B"));
         }
 
         if (respC.getText().toString().equals(quiz.results.get(questionIndex).correct_answer)) {
-            respC.setBackgroundColor(Color.GREEN);
+            respC.setBackgroundColor(Color.parseColor("#3FDBA3"));
         } else if (respC.getText().toString().equals(selectedAnswer)) {
-            respC.setBackgroundColor(Color.RED);
+            respC.setBackgroundColor(Color.parseColor("#FF5B5B"));
         }
 
         if (respD.getText().toString().equals(quiz.results.get(questionIndex).correct_answer)) {
-            respD.setBackgroundColor(Color.GREEN);
+            respD.setBackgroundColor(Color.parseColor("#3FDBA3"));
         } else if (respD.getText().toString().equals(selectedAnswer)) {
-            respD.setBackgroundColor(Color.RED);
+            respD.setBackgroundColor(Color.parseColor("#FF5B5B"));
         }
     }
 
 
     private void setQuestionsLeftTextView() {
         String helper = "Questions left: " + --totalQuestions;
+        if (totalQuestions == 0) {
+            quizEnded = true;
+        }
         questionsLeftTextView.setText(helper);
     }
 
@@ -338,13 +388,39 @@ public class DailyQuizActivity extends AppCompatActivity implements View.OnClick
         });
     }
 
+    private void saveLevelProgress(String category, String difficulty) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Log.d("TAG", "saveLevelProgress: "+difficulty);
+        editor.putString(category + "_difficulty", difficulty);
+        editor.apply();
+    }
+
+    private String getLevelProgress(String category) {
+        return sharedPreferences.getString(category + "_difficulty", "easy");
+    }
+
+    private void checkAndProceedToNextLevel(String category, int score) {
+        if (quizEnded) {
+            quizEnded = false;
+            if (score >= 3) { // 60% of 5 questions
+                String currentLevel = getLevelProgress(category);
+                Log.d("TAG", "checkAndProceedToNextLevel: "+currentLevel);
+                if (currentLevel.equals("easy")) {
+                    saveLevelProgress(category, "medium");
+                } else if (currentLevel.equals("medium")) {
+                    saveLevelProgress(category, "hard");
+                }
+            }
+        }
+    }
+
+
     private void setGlobalVariableQuiz(QuizObject quiz) {
         this.quiz = quiz;
     }
 
     private void setValuesToQuiz(QuizObject quiz, int index) {
         if (index < 5) {
-            Log.d("Hi", "setValuesToQuiz: "+quiz.results.size()+index);
             String question = quiz.results.get(index).getQuestion();
             question = question.replace("&quot;", "'");
             question = question.replace("&#039;", "'");
@@ -435,12 +511,16 @@ public class DailyQuizActivity extends AppCompatActivity implements View.OnClick
 
         } else {
             countDownTimer.onFinish();
+            String category = quizConfiguration.getCategory();
+            checkAndProceedToNextLevel(category, score);
             // TODO change ltr
             dialogObject.seeDailyQuizResultsDialog(score, score, quizConfiguration.getCategory());
 
             questionsLeftTextView.setVisibility(View.GONE);
             countdownTextTextView.setVisibility(View.GONE);
             countdownNumberTextView.setVisibility(View.GONE);
+            difficultyLevelTextView.setVisibility(View.GONE);
+            difficultyTextView.setVisibility(View.GONE);
             questionsTextView.setVisibility(View.GONE);
             respA.setVisibility(View.GONE);
             respB.setVisibility(View.GONE);

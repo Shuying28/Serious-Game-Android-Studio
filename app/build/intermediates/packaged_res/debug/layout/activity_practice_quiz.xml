@@ -3,10 +3,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/dark_bg"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".quiz.PracticeQuizActivity">
+
+    <!-- Card to display user information -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:elevation="4dp"
+        android:background="@drawable/rec_border_image">
+
+        <LinearLayout
+            android:id="@+id/result_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/user_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/user_avatar"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginRight="5dp"
+                    app:srcCompat="@drawable/avatar1" />
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kavoon"
+                    android:text="User Name"
+                    android:textAlignment="center"
+                    android:textColor="@color/orange"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/correct_answers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="0 / 5"
+                android:fontFamily="@font/kavoon"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/questions_left"
@@ -14,10 +69,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/shojumaru"
         android:text="@string/questions_left"
         android:textAlignment="center"
         android:textColor="@color/aqua"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -25,13 +82,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="24dp"
         android:text="@string/this_will_be_the_question"
         android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
 
     <LinearLayout
         android:id="@+id/layoutSelectat"
@@ -45,11 +102,12 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
+            android:fontFamily="@font/kavoon"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
-            android:backgroundTint="#E8E8E8"
+            android:backgroundTint="@color/dark_blue"
             android:text="@string/a"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/B_response"
@@ -58,10 +116,11 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="20dp"
+            android:fontFamily="@font/kavoon"
             android:layout_marginBottom="5dp"
-            android:backgroundTint="#E8E8E8"
+            android:backgroundTint="@color/dark_blue"
             android:text="@string/b"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/C_response"
@@ -71,9 +130,10 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
-            android:backgroundTint="#E8E8E8"
+            android:fontFamily="@font/kavoon"
+            android:backgroundTint="@color/dark_blue"
             android:text="@string/c"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/D_response"
@@ -83,9 +143,10 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
-            android:backgroundTint="#E8E8E8"
+            android:fontFamily="@font/kavoon"
+            android:backgroundTint="@color/dark_blue"
             android:text="@string/d"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
@@ -93,8 +154,10 @@
         android:id="@+id/next_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#5AA8AF"
+        android:backgroundTint="@color/orange"
         android:text="@string/next_question"
-        android:textColor="@color/white" />
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/kavoon"
+        android:textColor="@color/dark_blue" />
 
 </LinearLayout>

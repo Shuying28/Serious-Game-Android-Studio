@@ -969,7 +969,6 @@
     <color name="notification_action_color_filter">#ffffffff</color>
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
     <color name="orange">#F8D34D</color>
-    <color name="pink">#F57892</color>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
     <color name="primary_material_dark">@color/material_grey_900</color>
@@ -980,6 +979,7 @@
     <color name="primary_text_disabled_material_light">#39000000</color>
     <color name="purple_button">#7293E4</color>
     <color name="purple_text">#BABEFF</color>
+    <color name="red">#FF5B5B</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>

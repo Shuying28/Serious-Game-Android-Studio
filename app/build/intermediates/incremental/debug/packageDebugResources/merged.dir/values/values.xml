@@ -22,9 +22,9 @@
     <color name="dark_blue">#262956</color>
     <color name="ic_launcher_background">#FFEAD7</color>
     <color name="orange">#F8D34D</color>
-    <color name="pink">#F57892</color>
     <color name="purple_button">#7293E4</color>
     <color name="purple_text">#BABEFF</color>
+    <color name="red">#FF5B5B</color>
     <color name="white">#FFFFFFFF</color>
     <string name="a">A</string>
     <string name="app_name">Cat Trivia</string>

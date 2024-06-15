@@ -5,11 +5,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,21 +42,35 @@ public class PracticeQuizActivity extends AppCompatActivity implements View.OnCl
                              @Query("category") String category);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
     // Quiz variables
     QuizConfiguration quizConfiguration;
     QuizObject quiz;
 
     // Visual variables
-    TextView questionsTextView;
+    TextView questionsTextView, userNameTextView, correctAnswersTextView;
     TextView questionsLeftTextView;
     Button respA, respB, respC, respD;
     Button nextButton;
+    LinearLayout resultCard;
+    ImageView userAvatar;
 
     // Quiz running variables
     int questionIndex = 0;
     String selectedAnswer = "null";
     int score = 0;
     int totalQuestions = 0;
+    int fixedTotalQuestions = 0;
+    int correctAnswer = 0;
+    private MediaPlayer mediaPlayer;
 
     // Loading screen
     DialogObject dialogObject = new DialogObject(PracticeQuizActivity.this);
@@ -60,6 +80,10 @@ public class PracticeQuizActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practice_quiz);
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.trivia_quiz_bg);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
+
         questionsLeftTextView = findViewById(R.id.questions_left);
         questionsTextView = findViewById(R.id.question);
         respA = findViewById(R.id.A_response);
@@ -67,6 +91,18 @@ public class PracticeQuizActivity extends AppCompatActivity implements View.OnCl
         respC = findViewById(R.id.C_response);
         respD = findViewById(R.id.D_response);
         nextButton = findViewById(R.id.next_button);
+        userAvatar = findViewById(R.id.user_avatar);
+        resultCard = findViewById(R.id.result_card);
+        userNameTextView = findViewById(R.id.user_name);
+        correctAnswersTextView = findViewById(R.id.correct_answers);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("userPreferences", Context.MODE_PRIVATE);
+        userNameTextView.setText(sharedPreferences.getString("userName", ""));
+        int selectedAvatar = sharedPreferences.getInt("selectedAvatar", -1);
+
+        if (selectedAvatar != -1) {
+            userAvatar.setImageResource(selectedAvatar);
+        }
 
         quizConfiguration = (QuizConfiguration) getIntent().getSerializableExtra("config");
         if (quizConfiguration != null) {
@@ -97,30 +133,73 @@ public class PracticeQuizActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
-        respA.setBackgroundColor(Color.WHITE);
-        respB.setBackgroundColor(Color.WHITE);
-        respC.setBackgroundColor(Color.WHITE);
-        respD.setBackgroundColor(Color.WHITE);
+        respA.setBackgroundColor(Color.parseColor("#262956"));
+        respB.setBackgroundColor(Color.parseColor("#262956"));
+        respC.setBackgroundColor(Color.parseColor("#262956"));
+        respD.setBackgroundColor(Color.parseColor("#262956"));
 
         Button clickedButton = (Button) v;
 
         if (clickedButton.getId() == R.id.next_button) {
             if (questionIndex <= Integer.parseInt(quizConfiguration.getNumberOfQuestions())) {
-                if (Objects.equals(selectedAnswer, quiz.results.get(questionIndex).correct_answer)) {
-                    score++;
-                }
                 if (!Objects.equals(selectedAnswer, "null")) {
-                    questionIndex++;
-                    setQuestionsLeftTextView();
-                    setValuesToQuiz(quiz, questionIndex);
-                    selectedAnswer = "null";
+                    highlightAnswers();
+
+                    if (Objects.equals(selectedAnswer, quiz.results.get(questionIndex).correct_answer)) {
+                        score++;
+                        correctAnswer++;
+                        correctAnswersTextView.setText(correctAnswer + " / " + fixedTotalQuestions);
+                    }
+
+                    // Add a delay to allow users to see the correct and incorrect answers highlighted
+                    new Handler().postDelayed(() -> {
+                        questionIndex++;
+                        setQuestionsLeftTextView();
+                        setValuesToQuiz(quiz, questionIndex);
+                        selectedAnswer = "null";
+
+                        respA.setBackgroundColor(Color.parseColor("#262956"));
+                        respB.setBackgroundColor(Color.parseColor("#262956"));
+                        respC.setBackgroundColor(Color.parseColor("#262956"));
+                        respD.setBackgroundColor(Color.parseColor("#262956"));
+                    }, 500);
                 } else {
                     Toast.makeText(PracticeQuizActivity.this, "You have to select an answer!", Toast.LENGTH_SHORT).show();
                 }
             }
         } else {
             selectedAnswer = clickedButton.getText().toString();
-            clickedButton.setBackgroundColor(Color.CYAN);
+            respA.setBackgroundColor(Color.parseColor("#262956"));
+            respB.setBackgroundColor(Color.parseColor("#262956"));
+            respC.setBackgroundColor(Color.parseColor("#262956"));
+            respD.setBackgroundColor(Color.parseColor("#262956"));
+            clickedButton.setBackgroundColor(Color.parseColor("#F8D34D"));
+        }
+    }
+
+    private void highlightAnswers() {
+        if (respA.getText().toString().equals(quiz.results.get(questionIndex).correct_answer)) {
+            respA.setBackgroundColor(Color.parseColor("#3FDBA3"));
+        } else if (respA.getText().toString().equals(selectedAnswer)) {
+            respA.setBackgroundColor(Color.parseColor("#FF5B5B"));
+        }
+
+        if (respB.getText().toString().equals(quiz.results.get(questionIndex).correct_answer)) {
+            respB.setBackgroundColor(Color.parseColor("#3FDBA3"));
+        } else if (respB.getText().toString().equals(selectedAnswer)) {
+            respB.setBackgroundColor(Color.parseColor("#FF5B5B"));
+        }
+
+        if (respC.getText().toString().equals(quiz.results.get(questionIndex).correct_answer)) {
+            respC.setBackgroundColor(Color.parseColor("#3FDBA3"));
+        } else if (respC.getText().toString().equals(selectedAnswer)) {
+            respC.setBackgroundColor(Color.parseColor("#FF5B5B"));
+        }
+
+        if (respD.getText().toString().equals(quiz.results.get(questionIndex).correct_answer)) {
+            respD.setBackgroundColor(Color.parseColor("#3FDBA3"));
+        } else if (respD.getText().toString().equals(selectedAnswer)) {
+            respD.setBackgroundColor(Color.parseColor("#FF5B5B"));
         }
     }
 
@@ -150,6 +229,8 @@ public class PracticeQuizActivity extends AppCompatActivity implements View.OnCl
                     // append question left to textview
                     totalQuestions = Integer.parseInt(quizConfiguration.getNumberOfQuestions());
                     questionsLeftTextView.append(" " + totalQuestions);
+                    fixedTotalQuestions = totalQuestions;
+                    correctAnswersTextView.setText(correctAnswer + " / " + fixedTotalQuestions);
 
                     setGlobalVariableQuiz(quiz);
                     setValuesToQuiz(quiz, 0);
@@ -273,6 +354,8 @@ public class PracticeQuizActivity extends AppCompatActivity implements View.OnCl
             respC.setVisibility(View.GONE);
             respD.setVisibility(View.GONE);
             nextButton.setVisibility(View.GONE);
+            userAvatar.setVisibility(View.GONE);
+            resultCard.setVisibility(View.GONE);
         }
     }
 

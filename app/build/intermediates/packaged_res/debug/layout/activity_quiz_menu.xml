@@ -15,11 +15,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10sp"
         android:layout_marginBottom="10sp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/shojumaru"
         android:gravity="start"
-        android:text="@string/generate_your_quiz"
-        android:textColor="@color/black"
-        android:textSize="30sp"
+        android:text="GeneRATE YouR QuIz"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -28,20 +28,20 @@
         android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/aqua"
         app:boxStrokeColor="@color/text_input_layout_quiz_options"
-        app:hintTextColor="@color/black">
+        app:hintTextColor="@color/white">
 
         <AutoCompleteTextView
             android:id="@+id/auto_complete_textview_difficulty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/difficulty"
+            android:fontFamily="@font/kavoon"
             android:inputType="none"
             android:text="@string/choose_difficulty"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textStyle="bold" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -50,9 +50,9 @@
         android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/aqua"
         app:boxStrokeColor="@color/text_input_layout_quiz_options"
-        app:hintTextColor="@color/black">
+        app:hintTextColor="@color/white">
 
         <AutoCompleteTextView
             android:id="@+id/auto_complete_textview_category"
@@ -61,10 +61,10 @@
             android:dropDownHeight="320sp"
             android:hint="@string/category"
             android:inputType="none"
+            android:fontFamily="@font/kavoon"
             android:text="@string/choose_category"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textStyle="bold" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -73,9 +73,9 @@
         android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/aqua"
         app:boxStrokeColor="@color/text_input_layout_quiz_options"
-        app:hintTextColor="@color/black">
+        app:hintTextColor="@color/white">
 
         <AutoCompleteTextView
             android:id="@+id/auto_complete_textview_number_of_questions"
@@ -84,14 +84,15 @@
             android:hint="@string/number_of_questions"
             android:inputType="none"
             android:text="@string/choose_number_of_questions"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textStyle="bold" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:fontFamily="@font/kavoon" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
 
@@ -101,9 +102,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5sp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/purple_button"
+            android:fontFamily="@font/kavoon"
             android:text="@string/generate_random_quiz"
-            android:textColor="@color/orange"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <Button
@@ -112,9 +114,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5sp"
-            android:backgroundTint="#5AA8AF"
+            android:fontFamily="@font/kavoon"
+            android:backgroundTint="@color/orange"
             android:text="@string/start_quiz"
-            android:textColor="@color/white" />
+            android:textColor="@color/dark_blue" />
 
     </LinearLayout>
 
