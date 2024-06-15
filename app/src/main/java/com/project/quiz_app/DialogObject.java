@@ -47,7 +47,7 @@ public class DialogObject {
         dialog.show();
     }
 
-    public void seeQuizResultsDialog(int score, int totalScore) {
+    public void seeQuizResultsDialog(int score) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 
         LayoutInflater inflater = activity.getLayoutInflater();
@@ -60,15 +60,10 @@ public class DialogObject {
         dialog.show();
 
         Button okButton = view.findViewById(R.id.ok_quiz_results);
-        TextView lastQuizScoreTextView = view.findViewById(R.id.textview_show_score);
         TextView totalScoreTextView = view.findViewById(R.id.textview_show_total_score);
 
-        String stringToSetToTextView = lastQuizScoreTextView.getText().toString();
+        String stringToSetToTextView = totalScoreTextView.getText().toString();
         stringToSetToTextView += " " + score;
-        lastQuizScoreTextView.setText(stringToSetToTextView);
-
-        stringToSetToTextView = totalScoreTextView.getText().toString();
-        stringToSetToTextView += " " + totalScore;
         totalScoreTextView.setText(stringToSetToTextView);
 
         okButton.setOnClickListener(v -> {
@@ -164,7 +159,7 @@ public class DialogObject {
         laterButton.setOnClickListener(v -> dismissDialog());
     }
 
-    public void seeDailyQuizResultsDialog(int score, int dailyQuizTotalScore, String category) {
+    public void seeDailyQuizResultsDialog(int score, String category) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 
         LayoutInflater inflater = activity.getLayoutInflater();
@@ -177,15 +172,9 @@ public class DialogObject {
         dialog.show();
 
         Button okButton = view.findViewById(R.id.ok_quiz_results);
-        TextView lastQuizScoreTextView = view.findViewById(R.id.textview_show_score);
         TextView totalScoreTextView = view.findViewById(R.id.textview_show_total_score);
 
-        String stringToSetToTextView = lastQuizScoreTextView.getText().toString();
-        stringToSetToTextView += " " + score;
-        lastQuizScoreTextView.setText(stringToSetToTextView);
-
-
-        stringToSetToTextView = "Daily quiz total score: " + dailyQuizTotalScore;
+        String stringToSetToTextView = "Total score: " + score;
         totalScoreTextView.setText(stringToSetToTextView);
 
         okButton.setOnClickListener(v -> {

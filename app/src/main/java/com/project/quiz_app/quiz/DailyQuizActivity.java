@@ -513,8 +513,7 @@ public class DailyQuizActivity extends AppCompatActivity implements View.OnClick
             countDownTimer.onFinish();
             String category = quizConfiguration.getCategory();
             checkAndProceedToNextLevel(category, score);
-            // TODO change ltr
-            dialogObject.seeDailyQuizResultsDialog(score, score, quizConfiguration.getCategory());
+            dialogObject.seeDailyQuizResultsDialog(score, quizConfiguration.getCategory());
 
             questionsLeftTextView.setVisibility(View.GONE);
             countdownTextTextView.setVisibility(View.GONE);

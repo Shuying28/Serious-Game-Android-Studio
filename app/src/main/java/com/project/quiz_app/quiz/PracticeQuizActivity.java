@@ -346,7 +346,7 @@ public class PracticeQuizActivity extends AppCompatActivity implements View.OnCl
             }
 
         } else {
-            dialogObject.seeQuizResultsDialog(score, score); // Simplified: only displaying the current score
+            dialogObject.seeQuizResultsDialog(score);
             questionsLeftTextView.setVisibility(View.GONE);
             questionsTextView.setVisibility(View.GONE);
             respA.setVisibility(View.GONE);

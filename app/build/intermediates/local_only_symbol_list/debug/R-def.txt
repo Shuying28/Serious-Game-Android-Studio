@@ -140,7 +140,6 @@ id text_input_layout_amount
 id text_input_layout_category
 id text_input_layout_difficulty
 id textview_no_internet
-id textview_show_score
 id textview_show_total_score
 id try_it_later_button
 id user_avatar

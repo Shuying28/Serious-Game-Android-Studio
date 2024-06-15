@@ -3748,7 +3748,6 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id textview_no_internet
-id textview_show_score
 id textview_show_total_score
 id time
 id title

@@ -45,7 +45,7 @@ public class QuizMenuActivity extends AppCompatActivity {
     String[] difficultyItem = {"Any Difficulty", "Easy", "Medium", "Hard"};
     String[] categoryItem = {"Any Category", "Music", "Video Games",
             "Science & Nature", "Computers", "Mathematics", "Animals"};
-    String[] numberItem = {"5", "10", "25", "50"};
+    String[] numberItem = {"5", "10"};
     AutoCompleteTextView autoCompleteTextViewDifficulty;
     AutoCompleteTextView autoCompleteTextViewCategory;
     AutoCompleteTextView autoCompleteTextViewQuestionsNumber;
